@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 위의 메타태그 3개는 건드릴 일이 없을것임 -->
+    <title>박스를가로로</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        section {
+            display: flex;
+            /* 박스를 가로로 붙였다! 근데 쪼그라들었다 ... */
+            margin: 0 auto;
+            text-align: center;
+            /* 박스가 가운데로 오는 이유: 마진은 바깥공간. 0은 아래위로 0. auto는 좌우(좌우마진이 자동) 
+            상우하좌 (4개 쓸 경우)
+            상하 / 좌우 (2개 쓸 경우) */
+            Width: 1200px;
+            background: #f00;
+        }
+
+        section>div {
+            /* 섹션의 자식 div만 글자색을 바꾸기
+            만약 그냥 div만 썼다면 모든 div의 글자색이 바뀌었을것임 */
+            flex: 1; 
+            /* 1:1:1:1 비율로 균등히 분배 */
+            color: rgb(210, 189, 211);
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div>001</div>
+        <div>002</div>
+        <div>003</div>
+        <div>004</div>
+    </section>
+    <div>004</div>
+
+</body>
+
+</html>
