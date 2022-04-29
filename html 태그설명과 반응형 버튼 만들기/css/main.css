@@ -1,0 +1,17 @@
+.mopen {
+    display: none;
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    font-size: 30px;
+    padding: 10px;
+    background: #ddd;
+}
+
+@media (max-width:768px) {
+    .mopen {
+        display: block;
+    }
+}
+
+/* 모바일 버튼을 만드는 가장 쉬운 방법 . PC화면에서는 안보여야 하고 사이즈가 줄어들면 나와야 함.  */
