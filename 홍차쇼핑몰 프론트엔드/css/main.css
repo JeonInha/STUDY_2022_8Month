@@ -1,0 +1,21 @@
+.header .top_banner {
+    display: flex;
+    width: 1200px;
+    margin: 0 auto;
+    color: gray;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    text-align: right;
+}
+
+.gnb {
+    display: flex;
+    width: 1200px;
+    margin: 0 auto;
+    color: gray;
+    background-color: black;
+    padding: 5 10;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    text-align: center;
+}
