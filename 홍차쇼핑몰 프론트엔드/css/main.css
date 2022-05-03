@@ -15,17 +15,16 @@ img {
     padding-bottom: 10px;
 }
 
-.top_banner>ul {
+.top_banner ul {
     display: flex;
     flex-direction: row-reverse;
     color: gray;
     text-align: right;
 }
 
-.top_banner>ul>li {
-    padding: 0 20px;
-    border-right: 1px solid;
-
+.top_banner li~li::after {
+    content: "|";
+    padding: 20px;
 }
 
 .logo {
@@ -40,7 +39,7 @@ img {
     background-color: #212529;
     text-align: center;
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 700;
     ;
 }
 
@@ -48,4 +47,19 @@ img {
     flex-grow: 1;
     padding: 10px;
     border-left: 1px bold #ddd;
+}
+
+.head_section {
+    position: relative;
+}
+
+.notice_slider {
+    position: absolute;
+    width: 1200px;
+    text-align: left;
+}
+
+.main_slider {
+    margin: auto;
+    text-align: center;
 }
