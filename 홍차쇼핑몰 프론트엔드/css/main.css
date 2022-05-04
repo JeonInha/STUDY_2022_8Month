@@ -33,6 +33,10 @@ img {
     padding: 30px 0;
 }
 
+.header {
+    height: auto;
+}
+
 .gnb.on {
     left: 0;
 }
@@ -60,12 +64,18 @@ img {
 .notice_slider {
     position: absolute;
     width: 1200px;
+    height: 20px;
     text-align: left;
+    transform: translateY(-20px);
 }
 
 .main_slider {
     margin: auto;
     text-align: center;
+}
+
+.main_slider img {
+    width: 1200px%;
 }
 
 .mopen {
@@ -139,6 +149,7 @@ img {
         width: calc(100% - 90px);
         height: 100vh;
         transition: 0.5s;
+        background-color: #212529;
         z-index: 999;
     }
 
@@ -150,7 +161,7 @@ img {
         display: flex;
         flex-direction: column;
         color: #ddd;
-        background-color: #212529;
+
         text-align: center;
         font-size: 20px;
         font-weight: 700;

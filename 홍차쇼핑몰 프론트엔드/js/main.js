@@ -1,6 +1,6 @@
 $(function () {
   $('.notice_slider').slick({
-    slidesToShow: 1,
+    //slidesToShow: 1,
     arrows: false,
     autoplay: true,
     autoplaySpeed: 3000,
