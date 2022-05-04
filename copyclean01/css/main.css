@@ -1,3 +1,7 @@
+.wrap {
+    overflow: auto;
+}
+
 .container {
     display: flex;
     width: 1200px;
@@ -38,19 +42,17 @@
 /* 메인비주얼 */
 .main_visual {
     position: relative;
+    max-width: 100%;
     height: 800px;
-    background: url(../image/main_slider01.jpg) no-repeat center top / cover
+    background: url(../image/main_slider01.jpg) no-repeat left top / cover;
 }
 
 .main_visual .slogan {
     position: absolute;
     /* 떠오르는 것들은 높이를 가지지 않고 background 밖으로 나간다. */
-    inset: 100px 1000px auto;
-    /* 호환상 문제가 조금 있지만 이렇게 합쳐서 쓸 수 있음 
+    margin: 0 0 0 200px;
     top: 100px;
-    right: 600px; 
-    이랑 같은 내용*/
-
+    right: 600px;
 }
 
 .main_slider {
@@ -335,4 +337,532 @@ footer address {
     font-size: 20px;
     text-align: center;
     border-radius: 50%;
+} */
+
+
+
+/* 
+
+****************************************
+
+
+반응형
+전인하 만듦
+
+
+
+
+*****************************************
+
+*/
+
+
+
+@media (max-width:768px) {
+
+
+    .container {
+        display: flex;
+        width: auto;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+
+    .header .top_banner {
+        display: none;
+        border-bottom: 1px solid #f2f2f2fe;
+        line-height: 40px
+    }
+
+    .header .top_banner span {
+        margin: 0 0 0 auto;
+    }
+
+    .header .top_banner a {
+        margin: 0 0 0 10px;
+        padding: 0 10px;
+        border-left: 1px solid #ddd;
+        border-right: 1px solid #ddd;
+    }
+
+    .header h1 {
+        padding: 0 15px;
+    }
+
+
+    .header .gnb {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        background: #fff;
+        width: calc(100% - 90px);
+        height: 100vh;
+        margin: 0 0 0 auto;
+        border-right: 1px solid #ddd;
+        z-index: 999;
+        transition: 0.5s;
+    }
+
+    .header .gnb.on {
+        left: 0;
+    }
+
+    .header .gnb>ul {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding: 50px 15px;
+        line-height: 40px;
+        font-size: 19px;
+        font-weight: 500px;
+    }
+
+    .header .gnb>ul a {
+        display: block;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .main_visual {
+        position: relative;
+        height: calc(100vh - 90px);
+        /* 기준 만들어줌 */
+        background: url(../image/main_slider01.jpg) no-repeat right top / cover
+    }
+
+    .main_visual .slogan {
+        display: none;
+        position: absolute;
+        top: 100px;
+        right: 600px;
+    }
+
+    .main_slider {
+        position: absolute;
+        top: auto;
+        left: 0%;
+        bottom: 200px;
+        transform: translate(0, 0);
+        width: 100%;
+        padding: 10 30px;
+        text-align: center;
+    }
+
+    .main_slider h3 {
+        font-size: 11vw;
+        font-weight: 900;
+        margin: 0 0 30px 0;
+        padding: 2px 0;
+        color: #6610f2;
+
+
+        background: -webkit-linear-gradient(rgb(3, 3, 94), rgb(16, 135, 182));
+        color: transparent;
+        background-clip: border-box;
+        -webkit-background-clip: text;
+    }
+
+    .main_slider p {
+        display: block;
+        font-size: 3vw;
+        margin: 0 0 20px 0;
+        color: #000
+    }
+
+    .main_slider strong {
+        color: #e26600
+    }
+
+    .main_slider .slick-dots {
+        padding: 30px 0 0 0;
+    }
+
+    .main_slider .slick-dots li {
+        display: none;
+        margin: 0 10px 0 0;
+        background-color: black;
+        height: 4px;
+        width: 10px;
+
+    }
+
+    .main_slider .slick-dots li.slick-active {
+        background-color: #fd7e14;
+        height: 4px;
+        width: 10px;
+    }
+
+    .main_slider .slick-dots button {
+        display: none;
+    }
+
+    .main_banner {
+        transform: translateY(-30%);
+    }
+
+    .main_banner .container {
+        height: auto;
+        align-items: stretch;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .main_banner figure {
+        display: flex;
+        flex: 1 1 50%;
+        text-align: center;
+        color: #fff;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+        transition: 0.5s
+    }
+
+    .main_banner figure:hover {
+        height: 200px;
+    }
+
+    .main_banner figure:nth-child(1) {
+        background: #da544b;
+    }
+
+    .main_banner figure:nth-child(2) {
+        background: #f4cb4f
+    }
+
+    .main_banner figure:nth-child(3) {
+        background: #337689;
+    }
+
+    .main_banner figure:nth-child(4) {
+        background: #6fa476;
+    }
+
+    .main_banner figure a {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        text-align: center;
+        width: 100px;
+        height: 120px;
+        font-size: 11px;
+        color: #fff;
+    }
+
+    .main_banner figure:nth-child(1) a {
+        background: url(../image/icon_set_w.png) no-repeat 0 0;
+        transition: 0.5s;
+    }
+
+    .main_banner figure:nth-child(1):hover a {
+        background: url(../image/icon_set_w.png) no-repeat -500px 0;
+    }
+
+
+    .main_banner figure:nth-child(2) a {
+        background: url(../image/icon_set_w.png) no-repeat -100px 0;
+    }
+
+    .main_banner figure:nth-child(3) a {
+        background: url(../image/icon_set_w.png) no-repeat -200px 0;
+    }
+
+    .main_banner figure:nth-child(4) a {
+        background: url(../image/icon_set_w.png) no-repeat -300px 0;
+    }
+
+    .main_banner .customer {
+        position: relative;
+        flex: 2;
+        text-align: right;
+        background: #f6f6f6;
+        ;
+        padding: 50px 30px 0 0;
+        height: 200px;
+    }
+
+
+    .main_banner .customer a {
+        display: block;
+        margin: 0 0 10px 0;
+        font-size: 38px;
+        font-weight: 700;
+        background: -webkit-linear-gradient(rgb(3, 3, 94), rgb(16, 135, 182));
+        -webkit-text-fill-color: transparent;
+        background-clip: border-box;
+        -webkit-background-clip: text;
+    }
+
+    .main_banner .customer i {
+        position: absolute;
+        top: -29px;
+        right: 0;
+        color: #fff;
+        background-color: #f00;
+        font-size: 38px;
+        padding: 10px;
+        border-radius: 50%;
+    }
+
+    .main_link {
+        padding: 0 0 100px 0;
+    }
+
+    .main_link h2 {
+        text-align: center;
+        font-size: 21px;
+        margin: 0 0 50px 0;
+    }
+
+    .main_link h2::after {
+        content: "";
+        display: inline-block;
+        width: 80px;
+        height: 1px;
+        background: red;
+        vertical-align: middle;
+        margin: 0 10px;
+    }
+
+    .main_link h2::before {
+        content: "";
+        display: inline-block;
+        width: 80px;
+        height: 1px;
+        background: red;
+        vertical-align: middle;
+        margin: 0 10px;
+    }
+
+    .main_link .container {
+        gap: 30px;
+        background: #eee;
+    }
+
+    .main_link figure {
+        position: relative;
+        flex: 1;
+        border-radius: 50px 0 0 0;
+        overflow: hidden;
+    }
+
+    .main_link img {
+        width: 100%;
+        margin: 0 0 30px 0;
+    }
+
+    .main_link h3 {
+        font-size: 23px;
+        margin: 0 0 30px 0;
+        padding: 0 30px;
+    }
+
+    .main_link p {
+        padding: 0 30px;
+    }
+
+    .main_link h3::after {
+        content: "";
+        display: block;
+        width: 80px;
+        height: 1px;
+        background: #dc3545;
+        margin: 15px 0;
+    }
+
+    .main_link figure a {
+        position: absolute;
+        background-color: rgba(255, 193, 7, 0.5);
+        top: 200px;
+        right: 30px;
+        width: 60px;
+        height: 60px;
+        text-align: center;
+        line-height: 60px;
+        color: #fff;
+        border-radius: 50%;
+        transition: 0.3s;
+    }
+
+    .main_link figure a:hover {
+        background-color: rgba(255, 193, 7, 1);
+        border-radius: 5%;
+    }
+
+    footer {
+        border-top: 1px solid #ddd;
+        padding: 30px 0;
+        text-align: center;
+        color: #fff;
+        background-color: #333;
+
+    }
+
+    footer address {
+        font-style: normal;
+    }
+
+    .footer ul {
+        margin: 10px 0;
+    }
+
+    .footer ul>li {
+        display: inline-block;
+        padding: 5px 7px;
+    }
+
+    .footer ul>li~li::before {
+        content: "";
+        width: 1px;
+        height: 13px;
+        background: #777;
+        margin: 0 15px;
+        vertical-align: middle;
+    }
+
+    .mopen {
+        position: fixed;
+        top: 30px;
+        right: 30px;
+        width: 30px;
+        height: 30px;
+        background: #ddd;
+    }
+
+    .mopen span {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        left: 5px;
+        height: 3px;
+        background: #333;
+    }
+
+    .mopen span:nth-child(1) {
+        top: calc(30px*0.23);
+    }
+
+    .mopen span:nth-child(2) {
+        top: calc(30px*0.45);
+        transition: 0.5s;
+    }
+
+    .mopen span:nth-child(3) {
+        top: calc(30px*0.45);
+        transition: 0.5s;
+    }
+
+    .mopen span:nth-child(4) {
+        top: calc(30px*0.7);
+    }
+
+
+
+    .mopen.on span:nth-child(1) {
+        display: none;
+    }
+
+    .mopen.on span:nth-child(2) {
+        transform: rotate(45deg);
+    }
+
+    .mopen.on span:nth-child(3) {
+        transform: rotate(-45deg);
+    }
+
+
+    .mopen.on span:nth-child(4) {
+
+        display: none;
+    }
+
+
+}
+
+
+
+
+
+
+
+
+/* 
+.mopen {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    width: 30px;
+    height: 30px;
+    background: #ddd;
+    text-align: center;
+    line-height: 30px;
+}
+
+.mopen::before {
+    content: "\e91c";
+    font-family: xeicon !important;
+}
+
+.mopen.on::before {
+    content: "\e921";
+    font-family: xeicon !important;
+}
+ */
+
+
+
+
+
+
+
+
+
+
+/* .mopen span {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        left: 5px;
+        height: 3px;
+        background: #333;
+    }
+
+    .mopen span:nth-child(1) {
+        top: calc(30px*0.23);
+    }
+
+    .mopen span:nth-child(2) {
+        top: calc(30px*0.45);
+        transition: 0.5s;
+    }
+
+    .mopen span:nth-child(3) {
+        top: calc(30px*0.45);
+        transition: 0.5s;
+    }
+
+    .mopen span:nth-child(4) {
+        top: calc(30px*0.7);
+    }
+
+
+
+    .mopen.on span:nth-child(1) {
+        display: none;
+    }
+
+    .mopen.on span:nth-child(2) {
+        transform: rotate(45deg);
+    }
+
+    .mopen.on span:nth-child(3) {
+        transform: rotate(-45deg);
+    }
+
+
+    .mopen.on span:nth-child(4) {
+
+        display: none;
+    }
+
+
 } */

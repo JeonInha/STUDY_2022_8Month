@@ -33,6 +33,10 @@ img {
     padding: 30px 0;
 }
 
+.gnb.on {
+    left: 0;
+}
+
 .gnb ul {
     display: flex;
     color: #ddd;
@@ -62,4 +66,140 @@ img {
 .main_slider {
     margin: auto;
     text-align: center;
+}
+
+.mopen {
+    display: none;
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    width: 30px;
+    height: 30px;
+    background: gray;
+}
+
+
+
+
+
+
+
+
+/* 
+************************
+
+이 아래부터 반응형
+
+
+**********************
+*/
+
+@media (max-width:768px) {
+
+    img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .header {
+        width: auto;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .top_banner {
+        display: none;
+        margin: 10px 0;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 10px;
+    }
+
+    .top_banner ul {
+        display: flex;
+        flex-direction: row-reverse;
+        color: gray;
+        text-align: right;
+    }
+
+    .top_banner li~li::after {
+        content: "|";
+        padding: 20px;
+    }
+
+    .logo {
+        width: 300px;
+        margin: auto;
+        padding: 30px 0;
+    }
+
+    .gnb {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: calc(100% - 90px);
+        height: 100vh;
+        transition: 0.5s;
+        z-index: 999;
+    }
+
+    .gnb.on {
+        left: 0;
+    }
+
+    .gnb ul {
+        display: flex;
+        flex-direction: column;
+        color: #ddd;
+        background-color: #212529;
+        text-align: center;
+        font-size: 20px;
+        font-weight: 700;
+        ;
+    }
+
+    .gnb>ul>li {
+        flex-grow: 1;
+        padding: 10px;
+        border-left: 1px bold #ddd;
+    }
+
+    .head_section {
+        position: relative;
+    }
+
+    .notice_slider {
+        display: none;
+        position: absolute;
+        width: 1200px;
+        text-align: left;
+    }
+
+    .main_slider {
+        margin: auto;
+        text-align: center;
+    }
+
+    .mopen {
+        display: block;
+    }
+
+    .mopen::after {
+        content: "\e902";
+        font-family: xeicon !important;
+        color: whitesmoke;
+        font-size: 30px;
+        text-align: center;
+        vertical-align: middle;
+
+    }
+
+    .mopen.on::after {
+        content: "\e94a";
+        font-family: xeicon !important;
+        color: whitesmoke;
+        font-size: 30px;
+        text-align: center;
+        vertical-align: middle;
+    }
+
 }

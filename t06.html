@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- content="width=device-width // 화면의 너비 맞추는 부분 -->
+    <!-- meta viewporter검색해서 알아보기. 하지만 보통 이 윗줄은 건드리지 않음. -->
+    <title>반응형 연습</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            list-style: none;
+        }
+
+        body {
+            background: #333;
+        }
+
+
+        .responsive {
+            background: red;
+        }
+
+        .responsive span {
+            display: none;
+        }
+
+        .res02 {
+            display: flex;
+            gap: 20px;
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        .res02 figure {
+            flex: 1;
+            background: #ff0;
+        }
+
+        nav {
+            background: wheat;
+        }
+
+
+        nav.on {
+            left: 0;
+        }
+
+        nav>ul {
+            display: flex;
+            justify-content: center;
+            line-height: 40px;
+        }
+
+        nav>ul a {
+            display: block;
+            padding: 10px 40px;
+        }
+
+        .mopen {
+            display: none;
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            width: 30px;
+            height: 30px;
+            background: plum;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        .mopen::before {
+            content: "O"
+        }
+
+        .mopen.on::before {
+            content: "X"
+        }
+
+
+
+        @media (max-width: 768px) {
+
+            /* css에서 만나게 되는 if문. 공부하기.*/
+            .responsive {
+                background: blue;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .responsive span {
+                display: block;
+            }
+
+            .res02 {
+                display: flex;
+                flex-direction: column;
+                /* 박스를 세로로 배치하는 반응형 */
+                gap: 20px;
+                width: auto;
+                margin: 0 auto;
+            }
+
+
+            .res02 figure {
+                flex: 1;
+                background: #f00;
+            }
+
+
+            /* 이하 아래 반응형 세로 메뉴 만들기 */
+            nav {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                /* 화면너머로 옮겨둠 */
+                background: aquamarine;
+                width: calc(100% - 90px);
+                /* 메뉴 외부 영역의 영역px 고정하고 메뉴비율 변경 */
+                height: 100vh;
+                /* 뷰포트 높이의 100% */
+                padding: 50px 15px;
+                transition: 0.5s;
+            }
+
+            nav>ul {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                line-height: 40px;
+            }
+
+            nav>ul a {
+                display: block;
+                padding: 10px 40px;
+                color: #333;
+            }
+
+
+
+        }
+
+        .mopen {
+            display: block;
+        }
+
+        /* 아이패드 사이즈 */
+
+
+        @media (max-width: 500px) {
+            .responsive {
+                background: pink;
+            }
+        }
+
+        /* 핸드폰 사이즈 */
+    </style>
+
+
+</head>
+
+<body>
+    <div class="responsive">
+        <h1>
+            <span>이야아아아아압</span>
+        </h1>
+    </div>
+
+    <div class="res02">
+        <figure>
+            01
+        </figure>
+        <figure>
+            01
+        </figure>
+        <figure>
+            01
+        </figure>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="#1">menu01</a></li>
+            <li><a href="#1">menu01</a></li>
+            <li><a href="#1">menu01</a></li>
+            <li><a href="#1">menu01</a></li>
+        </ul>
+    </nav>
+
+    <div class="mopen">
+    </div>
+    <script>
+        document.querySelector('.mopen').addEventListener('click', function () {
+            document.querySelector('nav').classList.toggle('on')
+            document.querySelector('.mopen').classList.toggle('on')
+
+
+        })
+        //mopen을 클릭했을 때 nav에 xxx란 클래스를 추가
+        //요즘 자바스크립트로 많이 쓰는 방법. 자바스크립트는 클래스를 붙이기만하고
+        // 일은 css가 함.
+    </script>
+
+</body>
+
+</html>

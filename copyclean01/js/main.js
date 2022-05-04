@@ -16,5 +16,12 @@ $(function () {
         // 1000 = 1s / 자바스크립트에서 시간을 쓸 땐 ms 단위로 씀
         dots: true
     })
+
+$('.mopen').on('click', function(){
+    $('.gnb').toggleClass('on')
+    $('.mopen').toggleClass('on')
+})
+
 })
 // 슬릭: 우리가 만들어주지 않아도 div로 요소 하나하나를 싸고, class로 이름도 만들어둠.
+
