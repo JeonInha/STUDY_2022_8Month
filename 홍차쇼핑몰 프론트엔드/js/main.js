@@ -18,6 +18,7 @@ $(function () {
   $('.mopen').on('click', function () {
     $('.gnb').toggleClass('on')
     $('.mopen').toggleClass('on')
+    $('.logo').toggleClass('on')
   })
 
 })

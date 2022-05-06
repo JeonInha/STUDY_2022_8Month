@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>홈쇼핑팝업</title>
+    <link rel="stylesheet" href="./copyclean01/css/reset.css">
+    <style>
+        img {
+            max-width: 100%;
+        }
+
+        section h2 {
+            font-size: 21px;
+            font-weight: 500;
+            margin: 0 0 30px 0;
+        }
+
+        section h2::after {
+            content: "";
+            display: block;
+            width: 1px;
+            height: 60px;
+            background-color: #f00;
+            margin: 20px auto;
+        }
+
+        section p {
+            font-size: 15px;
+            font-weight: 300;
+            margin: 0 0 30px 0;
+        }
+
+        .content {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .content .container {
+            display: flex;
+            width: 1200px;
+            margin: 0 auto;
+            gap: 30px;
+        }
+
+        .content .inbox {
+            overflow: hidden;
+        }
+
+        .content figure img {
+            transition: 0.3s;
+        }
+
+        .content figure:hover img {
+            transform: scale(1.2);
+
+        }
+
+        .content figure {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content figure a {
+            position: absolute;
+            right: 0;
+            bottom: -38px;
+            transition: 0.5s;
+            border: 1px solid #333;
+            background: #fff;
+            padding: 10px;
+        }
+
+        .content figure:hover a {
+            bottom: 0;
+
+        }
+
+        /* 
+        ************************************
+        */
+
+        .con02 {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .con02 .container {
+            display: flex;
+            width: 1200px;
+            margin: 0 auto;
+            gap: 30px;
+        }
+
+        .con02 .inbox {
+            overflow: hidden;
+        }
+
+        .con02 figure img {
+            transition: 0.3s;
+        }
+
+        .con02 figure:hover img {
+            transform: scale(1.2);
+        }
+
+        .con02 figure {
+            position: relative;
+        }
+
+        .con02 figure a {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0%;
+            /* 수치있음, 트렌지션 먹음 */
+            visibility: hidden;
+            /* 현상, 트렌지션 안먹음 */
+            transition: 0.5s;
+            border: 1px solid #333;
+            background: #fff;
+            padding: 7px 20px;
+            line-height: 30px;
+            height: 35px;
+
+        }
+
+        .con02 figure:hover a {
+            opacity: 1;
+            visibility: visible;
+
+        }
+
+        /* 
+        ***************************
+         */
+
+
+        .con03 {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .con03 .container {
+            display: flex;
+            width: 1200px;
+            margin: 0 auto;
+            gap: 30px;
+        }
+
+        .con03 .inbox {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .con03 .inbox::before {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            background: rgba(0, 0, 0, 0.25);
+            border-top: 1px solid #333;
+            border-left: 1px solid #333;
+            transition: 0.3s;
+            box-sizing: border-box;
+            opacity: 0;
+        }
+
+        .con03 .inbox::after {
+            position: absolute;
+            content: "";
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            background: rgba(0, 0, 0, 0.25);
+            border-bottom: 1px solid #333;
+            border-right: 1px solid #333;
+            transition: 0.3s 0.1s;
+            /* 트렌지션 두번째 자리가 딜레이 */
+            box-sizing: border-box;
+            opacity: 0;
+        }
+
+        .con03 .inbox:hover::before,
+        .con03 .inbox:hover::after {
+            opacity: 1;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="content">
+        <h2>Lorem ipsum dolor sit.</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, sint. Pariatur dicta minus illo provident!
+        </p>
+
+        <div class="container">
+            <figure>
+                <div class="inbox"><img src="./copyclean01/image/main_s011.jpg"></div>
+                <a href="#1"><i class="xi-cart-add"></i></a>
+            </figure>
+            <figure>
+                <div class="inbox"><img src="./copyclean01/image/main_s012.jpg"></div>
+                <a href="#1"><i class="xi-cart-add"></i></a>
+            </figure>
+            <div>
+                <figure>
+                    <div class="inbox"><img src="./copyclean01/image/main_s013.jpg"></div>
+                    <a href="#1"><i class="xi-cart-add"></i></a>
+                </figure>
+            </div>
+    </section>
+
+    <hr>
+
+
+    <section class="con02">
+        <h2>Lorem ipsum dolor sit.</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, sint. Pariatur dicta minus illo provident!
+        </p>
+
+        <div class="container">
+            <figure>
+                <div class="inbox"><img src="./copyclean01/image/main_s011.jpg"></div>
+                <a href="#1">more</a>
+            </figure>
+            <figure>
+                <div class="inbox"><img src="./copyclean01/image/main_s012.jpg"></div>
+                <a href="#1">more</a>
+            </figure>
+            <div>
+                <figure>
+                    <div class="inbox"><img src="./copyclean01/image/main_s013.jpg"></div>
+                    <a href="#1">more</a>
+                </figure>
+            </div>
+    </section>
+
+    <hr>
+
+    <section class="con03">
+        <h2>Lorem ipsum dolor sit.</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, sint. Pariatur dicta minus illo provident!
+        </p>
+
+        <div class="container">
+            <figure>
+                <div class="inbox"><img src="./copyclean01/image/main_s011.jpg"></div>
+            </figure>
+            <figure>
+                <div class="inbox"><img src="./copyclean01/image/main_s012.jpg"></div>
+            </figure>
+            <div>
+                <figure>
+                    <div class="inbox"><img src="./copyclean01/image/main_s013.jpg"></div>
+                </figure>
+            </div>
+    </section>
+
+</body>
+
+</html>

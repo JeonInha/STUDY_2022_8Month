@@ -1,0 +1,79 @@
+.wrap {
+    overflow: auto;
+}
+
+.container {
+    display: flex;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+
+.logo {
+    display: block;
+    padding: 30px auto;
+    height: 60px;
+    text-align: center;
+    border-top: #38af4c solid 3px;
+}
+
+.util_menu {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 1200px;
+    margin: auto;
+    text-align: center;
+}
+
+.util_menu a {
+    padding: 0 15px 0 0;
+}
+
+nav::before {
+    position: absolute;
+    content: "";
+    top: 200px;
+    left: 0;
+    width: 100%;
+    height: 160px;
+    z-index: 888;
+}
+
+nav>ul {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    border-bottom: 1px #ddd solid;
+    font: 18px;
+    padding: 20px 0 0 0;
+    gap: 100px;
+}
+
+
+nav>ul li {
+    position: relative;
+    display: flex;
+    line-height: 40px;
+    text-align: center;
+}
+
+nav>ul>li ul {
+    position: absolute;
+    overflow: hidden;
+    top: 41px;
+    height: 0px;
+    font-size: 13px;
+    background: whitesmoke;
+    transition: 0.5s;
+    line-height: 40px;
+    width: 160px;
+}
+
+
+nav:hover>ul>li ul {
+    height: 160px;
+}
+
+.main_slider {
+    z-index: 111;
+}

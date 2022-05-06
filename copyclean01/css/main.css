@@ -24,7 +24,6 @@
     border-right: 1px solid #ddd;
 }
 
-
 .header .gnb {
     margin: 0 0 0 auto;
 }
@@ -330,6 +329,11 @@ footer address {
     vertical-align: middle;
 }
 
+.mlogo {
+    display: none;
+    z-index: 999;
+}
+
 /* .main_link a {
     display: block;
     background-color: #ffc107;
@@ -399,7 +403,7 @@ footer address {
         height: 100vh;
         margin: 0 0 0 auto;
         border-right: 1px solid #ddd;
-        z-index: 999;
+        z-index: 777;
         transition: 0.5s;
     }
 
@@ -411,6 +415,7 @@ footer address {
         display: flex;
         flex-direction: column;
         gap: 30px;
+        margin: 90px 0 0 0;
         padding: 50px 15px;
         line-height: 40px;
         font-size: 19px;
@@ -426,7 +431,7 @@ footer address {
         position: relative;
         height: calc(100vh - 90px);
         /* 기준 만들어줌 */
-        background: url(../image/main_slider01.jpg) no-repeat right top / cover
+        background: url(../image/main_slider01.jpg) no-repeat right 90px / cover
     }
 
     .main_visual .slogan {
@@ -726,6 +731,7 @@ footer address {
         width: 30px;
         height: 30px;
         background: #ddd;
+        z-index: 999;
     }
 
     .mopen span {
@@ -773,6 +779,12 @@ footer address {
     .mopen.on span:nth-child(4) {
 
         display: none;
+    }
+
+    .mlogo.on {
+        position: absolute;
+        display: inline-block;
+        z-index: 999;
     }
 
 
