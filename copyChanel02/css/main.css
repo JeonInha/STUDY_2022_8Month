@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css');
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.top_banner .container {
+    position: relative;
+    display: block;
+}
+
+.top_banner {
+
+    background: #f1f1f1;
+    padding: 30px 15px;
+    margin: 0px 3.5px;
+}
+
+
+.top_banner h2 {
+    font-family: 'Koulen', cursive;
+    font-size: 30px;
+    margin: 0 0 10px;
+}
+
+.top_banner .container a {
+    font-size: 15px;
+    font-weight: 300;
+    padding: 0 15px;
+    border: 1px #333 solid;
+    margin: 0 0 0 30px;
+}
+
+.top_banner i {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    background: #333;
+    border-radius: 50%;
+    color: #f1f1f1;
+    transform: translateY(-10px);
+}
+
+
+.gnb .container {
+    /* justify-content: space-between;
+    css flex: 아이템들의 사이에 균일한 공간을 만들어 줌. */
+    line-height: 100px;
+    display: flex;
+
+}
+
+.gnb nav {
+    margin: 0 0 0 auto;
+}
+
+.gnb form {
+    margin: 0 0 0 50px;
+}
+
+.gnb nav ul {
+    display: flex;
+}
+
+.gnb nav ul>li~li::before {
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 13px;
+    background-color: gray;
+    margin: 0 30px;
+}
+
+#search_form input[type='text'] {
+    font-size: 16px;
+    border: none;
+    border-bottom: #333 1px solid;
+    outline: none;
+    padding: 5px 0;
+}
+
+#search_form button {
+    outline: none;
+    border: none;
+    background: transparent;
+    font-size: 20px;
+}
+
+.main_visual figure .container {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.main_visual figure {
+    position: relative;
+    height: 600px;
+    color: #fff;
+}
+
+.main_visual .itm01 {
+    background: url(../img/mainvisual01.jpg) no-repeat center center/cover;
+
+}
+
+.main_visual .itm02 {
+    background: url(../img/mainvisual02.jpg) no-repeat center center/cover;
+
+}
+
+.main_visual .itm03 {
+    background: url(../img/mainvisual03.jpg) no-repeat center center/cover;
+
+}
+
+
+.main_visual figure h3 {
+    font-family: 'Koulen', cursive;
+    font-size: 60px;
+    margin: 0 0 20px 0;
+    text-shadow: 0 0 5px #000;
+}
+
+.main_visual figure p {
+    font-size: 13px;
+    font-weight: 300;
+    margin: 30px 0;
+}
+
+.main_visual figure a {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 300;
+    width: 100px;
+    padding: 10px 10px;
+    text-align: center;
+    border: 1px solid #fff;
+    background: #333;
+
+}
+
+.main_visual figure.itm02 h3 {
+    color: #333;
+    text-shadow: 0 0 5px #fff;
+}
+
+.main_visual figure.itm02 p {
+    color: #333;
+}
+
+.main_visual figure h3 {
+    transform: translateY(100px);
+    opacity: 0;
+
+}
+
+.main_visual figure.on h3 {
+    transform: translateY(0);
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.main_visual figure p {
+    transform: translateY(100px);
+    opacity: 0;
+}
+
+.main_visual figure.on p {
+    transform: translateY(0);
+    opacity: 1;
+    transition: 0.5s 0.5s;
+}
+
+.main_visual figure a {
+    transform: translateY(100px);
+    opacity: 0;
+}
+
+.main_visual figure.on a {
+    transform: translateY(0);
+    opacity: 1;
+    transition: 0.5s 1s;
+}
+
+
+.main_visual .slick-dots {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.main_visual .slick-dots li {
+    display: inline-block;
+    width: 80px;
+    height: 5px;
+    background: #333;
+    margin: 0 5px;
+}
+
+.main_visual .slick-dots li::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 100%;
+    background: #dc3545;
+}
+
+.main_visual .slick-dots li.slick-active::after {
+    width: 100%;
+    transition: 3s;
+}
+
+.main_visual .slick-dots button {
+    display: none;
+    padding: 100px 0;
+}
+
+/* 99999999999999999999999999999999999999 */
+
+.case {
+    width: 370px;
+    height: auto;
+    overflow: hidden;
+}
+
+.content01 {
+    text-align: center;
+    padding: 100px 0;
+}
+
+.content01 h2 {
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin: 0 0 10px;
+}
+
+.content01 p {
+    margin: 0 0 30px;
+}
+
+.content01 .container {
+    display: flex;
+}
+
+.content01 figure {
+    width: 400px;
+    padding: 0 15px;
+}
+
+.content01 figure img {
+    width: 100%;
+    transition: 0.5s;
+}
+
+.content01 figure strong {
+    display: block;
+    margin: 20px 0;
+}
+
+.content01 figure a {
+    display: inline-block;
+    border: 1px solid #333;
+    padding: 0 30px;
+    line-height: 30px;
+}
+
+.content01 figure img:hover {
+    transform: scale(1.2);
+}
+
+.content01 figure a:hover {
+    background: #dc3545;
+    color: #fff;
+}
