@@ -1,24 +1,33 @@
-.wrap {
-    overflow: auto;
-}
-
 .container {
     display: flex;
-    width: 1200px;
+    width: 1280px;
     margin: 0 auto;
 }
 
+.top_banner {
+    position: relative;
+    border-top: #38af4c 5px solid;
+}
 
-.logo {
+.top_banner .link {
+    position: absolute;
     display: block;
-    padding: 30px 0 0 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 210px;
     height: 60px;
-    text-align: center;
-    border-top: #38af4c solid 3px;
+    cursor: pointer;
+}
+
+.top_banner .container {
+    padding: 30px 0;
+    background: url(/subwaycopy/img/common/logo_w.png) no-repeat center center;
 }
 
 .util_menu {
     display: flex;
+    vertical-align: bottom;
     flex-direction: row-reverse;
     width: 1200px;
     margin: auto;
@@ -45,6 +54,7 @@
     margin: 0 0 0 10px;
     border-radius: 50%;
 }
+
 /* 
 8888888888888888888888888888888888888888888 */
 
@@ -52,14 +62,14 @@ nav {
     position: relative;
     border-bottom: 1px #ddd solid;
     width: 100%;
-    margin: 0 auto;  
+    margin: 0 auto;
 }
 
 nav::before {
     position: absolute;
     content: "";
-    top: 81px;
-    width: 100vw;
+    top: 61px;
+    width: 100%;
     height: 0px;
     background-color: whitesmoke;
     z-index: 998;
@@ -72,14 +82,14 @@ nav>ul {
     display: flex;
     justify-content: space-around;
     font: 18px;
-    font-weight: 400;  
+    font-weight: 400;
     padding: 20px 0 0 0;
     text-align: center
 }
 
 
 nav>ul li {
-    line-height: 60px;
+    line-height: 40px;
     text-align: center;
     font-weight: 400;
 }
@@ -87,7 +97,7 @@ nav>ul li {
 nav>ul>li ul {
     position: absolute;
     overflow: hidden;
-    top: 81px;
+    top: 61px;
     height: 0px;
     font-size: 13px;
     background: whitesmoke;
@@ -98,10 +108,10 @@ nav>ul>li ul {
 
 
 nav:hover>ul>li ul {
-    height: 250px;
+    height: 260px;
 }
 
-nav>ul>li:hover {
+nav>ul>li:hover>a {
     color: #38af4c;
 }
 
@@ -145,16 +155,20 @@ nav:hover::before {
     background-color: #38af4c;
 }
 
+.main_visual .slick-dots {
+    position: absolute;
+    bottom: 60px;
+    left: 70%;
+    transform: translateX(-50%);
+}
+
 .main_slider .slick-dots li {
     display: inline-block;
-    position: absolute;
-    bottom: 47px;
-    right: 20px;
-    margin: 0 15px;
     width: 10px;
     height: 10px;
-    background-color: #38af4c;
+    background-color: white;
     border-radius: 15px;
+    margin: 0 5px;
 }
 
 .main_slider .slick-dots li.slick-active {
@@ -166,6 +180,7 @@ nav:hover::before {
 }
 
 .quick_link {
+    display: flex;
     text-align: center;
     line-height: 80px;
     transform: translateY(-30px);
@@ -173,8 +188,8 @@ nav:hover::before {
 
 }
 
-.main_visual .a1 {
-
+.quick_link .a1 {
+    display: block;
     width: 300px;
     height: 80px;
     background-color: #ffc300;
@@ -185,7 +200,7 @@ nav:hover::before {
     padding: 0 0 0 27px;
 }
 
-.main_visual .a1 strong::before {
+.quick_link .a1 strong::before {
     content: "";
     display: inline-block;
     background-image: url(../img/main/icon_map.png);
@@ -195,7 +210,8 @@ nav:hover::before {
     padding: 0 13px 0 0;
 }
 
-.main_visual .a2 {
+.quick_link .a2 {
+    display: block;
     width: 300px;
     height: 80px;
     background-color: #38af4c;
@@ -206,7 +222,7 @@ nav:hover::before {
     padding: 0 0 0 27px;
 }
 
-.main_visual .a2 strong::before {
+.quick_link .a2 strong::before {
     content: "";
     display: inline-block;
     background-image: url(../img/main/icon_franchise.png);
@@ -217,3 +233,151 @@ nav:hover::before {
 }
 
 /* 99999999999999999999999999999999999999999999999999 */
+
+
+/* 99999999999999999999999999999999999999999999999999 */
+
+.middle_section {
+    background: url(../img/main/bg_content.gif);
+}
+
+.middle_section strong {
+    line-height: 150%;
+    font-weight: 700;
+}
+
+.middle_section .main_top a {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 700;
+    border: 2px solid #fff;
+    border-radius: 50px;
+    padding: 0 15px;
+}
+
+
+.middle_section .util {
+    position: relative;
+    flex: 1;
+    background: url(../img/main/bg_utilization.png) no-repeat center center/contain;
+    height: 300px;
+    margin: 0 0 0 55px;
+}
+
+.middle_section .util strong {
+    position: absolute;
+    top: 50px;
+    left: 30px;
+    font-size: 25px;
+    color: #fff;
+}
+
+.middle_section .history {
+    position: relative;
+    flex: 2;
+    background: url(../img/main/img_subway_history.png)no-repeat center center/contain;
+    height: 300px;
+}
+
+.middle_section .history strong {
+    position: absolute;
+    top: 50px;
+    left: 400px;
+    font-size: 25px;
+    color: #fff;
+}
+
+.whats_new {
+    display: flex;
+    flex: 2;
+    background: #fff;
+    margin: 20px 0 0 55px;
+    height: 300px;
+    border-radius: 50px 0 50px 0;
+    padding: 0 30px;
+}
+
+.whats_new h2 {
+    padding: 20px 0;
+}
+
+.whats_new p {
+    padding: 20px 0;
+}
+
+.sponcor {
+    flex: 1;
+
+}
+
+
+
+
+/* 99999999999999999999999999999999999999999999999999 */
+
+
+footer {
+    padding: 20px 0;
+    background: #333;
+    color: gray;
+}
+
+footer .case {
+    position: relative;
+}
+
+.case {
+    width: 1280px;
+    margin: 0 auto;
+}
+
+footer ul {
+    display: flex;
+    padding: 20px 0;
+}
+
+footer ul:nth-child(1) {
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid gray;
+}
+
+
+footer ul>li {
+    padding: 0 10px 0 0;
+    vertical-align: middle;
+}
+
+footer ul>li~li::before {
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 13px;
+    background-color: gray;
+    margin: 0 10px 0 0;
+}
+
+footer .insta {
+    position: absolute;
+    background: url(../img/common/icon_sns_instar.png) no-repeat 0 0;
+    bottom: 0px;
+    right: 60px;
+    width: 50px;
+    height: 50px;
+}
+
+footer .insta:hover {
+    background: url(../img/common/icon_sns_instar.png) no-repeat -50px 0;
+}
+
+footer .fbook {
+    position: absolute;
+    background: url(../img/common/icon_sns_facebook.png) no-repeat 0 0;
+    bottom: 0px;
+    right: 0px;
+    width: 50px;
+    height: 50px;
+}
+
+footer .fbook:hover {
+    background: url(../img/common/icon_sns_facebook.png) no-repeat -50px 0;
+}
