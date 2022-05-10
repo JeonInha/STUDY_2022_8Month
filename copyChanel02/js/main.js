@@ -18,12 +18,45 @@ $(function () {
         autoplay: true,
         pauseOnHover: false,
         pauseOnFocus: false,
+    })
+
+    $('.movie .dec i:nth-of-type(1)').on('click', function () {
+        $('.movie video').trigger('play')
+    })
+
+    $('.movie .dec i:nth-of-type(2)').on('click', function () {
+        $('.movie video').trigger('pause')
+    })
+
+
+
+
+    $('.m1').YTPlayer({
+        videoURL: 'https://youtu.be/eOOsAeOx5a0', 
+        containment: '.bgmv',
+        autoPlay: true,
+        mute: true,
+        startAt: 0.5,
+        opacity: 1,
+        loop : true,
+        showControls: false,
+        playOnlyIfVisible: true
     });
 
+    $('.m1').YTPApplyFilters({
+        grayscale: 70,
+        brightness: 50,
+    })
 
+    $('.bgmv i:nth-of-type(1)').on('click', function () {
+        $('.m1').YTPPlay()
+    })
 
-
-
+    $('.bgmv i:nth-of-type(2)').on('click', function () {
+        $('.m1').YTPPause()
+    })
     /////////////////////////////////////////
+
+
 
 })

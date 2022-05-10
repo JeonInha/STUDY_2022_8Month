@@ -8,6 +8,7 @@ body {
 
 
 .container {
+    display: flex;
     width: 1200px;
     margin: 0 auto;
 }
@@ -55,7 +56,6 @@ body {
     /* justify-content: space-between;
     css flex: 아이템들의 사이에 균일한 공간을 만들어 줌. */
     line-height: 100px;
-    display: flex;
 
 }
 
@@ -230,44 +230,64 @@ body {
 /* 99999999999999999999999999999999999999 */
 
 .case {
-    width: 370px;
-    height: auto;
     overflow: hidden;
+    border-radius: 51% 49% 70% 30% / 51% 66% 34% 49%;
+    margin: 0 0 20px 0;
 }
 
 .content01 {
     text-align: center;
     padding: 100px 0;
+    /* 패딩을 쓰는 이유: 마진은 겹쳐지기 때문. */
 }
 
-.content01 h2 {
-    font-size: 20px;
-    font-weight: 300;
-    letter-spacing: 1px;
+/* .dcontainer {
+    width: 1230px;
+    margin: 0 auto;
+}
+
+.dcontainer::after {
+    content: "";
+    display: block;
+    clear:both;
+}
+
+.dcontainer figure {
+    float: left;
+} */
+
+/* 구시대: float로 박스를 가로로 배치하는 방ㅂ법 */
+
+section h2 {
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: 5px;
     margin: 0 0 10px;
 }
 
-.content01 p {
+section p {
+    font-size: 15;
     margin: 0 0 30px;
+    font-weight: 300;
 }
 
 .content01 .container {
-    display: flex;
+    gap: 30px;
 }
 
 .content01 figure {
+    flex: 1;
     width: 400px;
-    padding: 0 15px;
+    transition: 0.5s;
 }
 
 .content01 figure img {
-    width: 100%;
     transition: 0.5s;
 }
 
 .content01 figure strong {
     display: block;
-    margin: 20px 0;
+    margin: 0 0 20px 0;
 }
 
 .content01 figure a {
@@ -281,7 +301,146 @@ body {
     transform: scale(1.2);
 }
 
+.content01 figure:hover .case {
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
 .content01 figure a:hover {
     background: #dc3545;
     color: #fff;
+}
+
+
+
+
+.fixedbg {
+    padding: 100px 0;
+    text-align: center;
+    color: #fff;
+    background: url(../img/mainvisual03.jpg) no-repeat fixed center center/cover;
+    filter: grayscale(0.7);
+
+
+}
+
+/* background-attachment: fixed;*/
+.fixedbg a {
+    font-size: 17px;
+    line-height: 30px;
+
+}
+
+.fixedbg i {
+    margin: 0 0 0 5px;
+    font-size: 30px;
+    vertical-align: middle;
+}
+
+
+
+/* 88888888888888 */
+
+
+.movie {
+    padding: 100px 0;
+}
+
+.movie .container {
+    gap: 50px;
+}
+
+.movie .container>* {
+    flex: 1;
+}
+
+.movie video {
+    max-width: 100%
+}
+
+.movie .dec {
+    padding: 100px 0;
+}
+
+.movie .dec i {
+    font-size: 30px;
+    margin: 0 5px 0 0;
+    cursor: pointer;
+}
+
+
+.bgmv {
+    padding: 150px 0;
+    color: #fff;
+    text-align: center;
+}
+
+.bgmv i {
+    font-size: 30px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.bgmv2 {
+    padding: 150px 0;
+    color: #fff;
+    text-align: center;
+}
+
+.bgmv2 i {
+    font-size: 30px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+/* 88888888888888 */
+
+
+
+
+
+
+/* 888888888888888888 */
+
+
+.footer {
+    padding: 0 0 50px 0;
+    background-color: #333;
+    color: #fff;
+}
+
+.footer .top {
+    line-height: 60px;
+    border-bottom: #ddd 1px solid;
+}
+
+.top ul {
+    display: flex;
+}
+
+.top ul>li {
+    padding: 0 15px;
+}
+
+.top ul>li~li::before {
+    content: "";
+    height: 15px;
+    width: 1px;
+    background-color: #ddd;
+}
+
+.top .sns {
+    margin: 0 0 0 auto;
+}
+
+.top .sns i {
+    margin: 0 5px;
+}
+
+.footer .bottom {
+    line-height: 60px;
+}
+
+.footer select {
+    margin: 0 0 0 auto;
 }
