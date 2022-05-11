@@ -395,6 +395,162 @@ section p {
 
 /* 88888888888888 */
 
+.product_list {
+    position: relative;
+    padding: 100px 0;
+    text-align: center;
+}
+
+/* css로 라벨 만들기 */
+.product_list small {
+    position: relative;
+    display: inline-block;
+    border-top: 15px solid #dc3545;
+    border-left: 100px solid #dc3545;
+    border-bottom: 15px solid #dc3545;
+    border-right: 15px solid transparent;
+    color: white;
+    width: 0;
+    height: 0;
+}
+
+.product_list span {
+    position: absolute;
+    top: -11px;
+    right: 10px;
+}
+
+/*  */
+
+.product_list .product_slider {
+    width: 1200px;
+    margin: 0 auto;
+
+}
+
+.product_list .product_slider figure {
+    padding: 0 15px;
+}
+
+.product_list .product_slider figure .box {
+    margin: 0 0 20px 0;
+}
+
+.product_list i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50, -50);
+    font-size: 50px;
+    color: #333;
+}
+
+.product_list i.s_left {
+    margin: 0 0 0 -650px;
+}
+
+.product_list i.s_right {
+    margin: 0 650px 0 650px;
+}
+
+.product_list .slick-dots {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin: 20px 0 0 0;
+}
+
+.product_list .slick-dots li {
+
+    width: 10px;
+    height: 10px;
+    background: #333;
+    border-radius: 50%;
+}
+
+.product_list .slick-dots li.slick-active {
+    background: #dc3545;
+}
+
+.product_list .slick-dots button {
+    display: none;
+}
+
+.product_list figure img {
+    padding: 10px 0;
+    transition: 0.3s;
+}
+
+.product_list figure.slick-center img {
+    transform: scale(1.25);
+}
+
+
+
+.tab {
+    padding: 100px 0;
+    background-color: whitesmoke;
+}
+
+.tab .container {
+    gap: 30px;
+}
+
+.tab .tab_wrap {
+    flex: 1;
+}
+
+.tab_link {
+    display: flex;
+}
+
+.tab_link>li {
+    flex: 1;
+    background: #333;
+    color: #fff;
+    padding: 10px 15px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.tab_link>li.on {
+    background: #dc3545;
+}
+
+.tab_link>li~li {
+    border-left: 1px solid #ddd;
+}
+
+
+.tab figure {
+    flex: 1;
+}
+
+.tab_content>li {
+    display: none;
+}
+
+.tab_content>li.on {
+    display: block;
+}
+
+.tab_content>li dd {
+    display: flex;
+    justify-content: space-between;
+    line-height: 40px;
+    border-bottom: 1px solid gray;
+}
+
+.tab_content>li dd strong {
+    width: 500px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+
+
 
 
 
@@ -406,27 +562,31 @@ section p {
 .footer {
     padding: 0 0 50px 0;
     background-color: #333;
-    color: #fff;
+    color: #ddd;
+    font-weight: 100;
+    font-size: 15px;
 }
 
-.footer .top {
+.footer .container {
     line-height: 60px;
-    border-bottom: #ddd 1px solid;
 }
 
-.top ul {
+.footer .top ul {
     display: flex;
 }
 
 .top ul>li {
-    padding: 0 15px;
+    padding: 0 15px 0 0;
 }
 
 .top ul>li~li::before {
+    display: inline-block;
     content: "";
-    height: 15px;
+    margin: 0 15px 0 0;
+    height: 13px;
     width: 1px;
-    background-color: #ddd;
+    background-color: gray;
+    vertical-align: middle;
 }
 
 .top .sns {
@@ -435,12 +595,27 @@ section p {
 
 .top .sns i {
     margin: 0 5px;
+    font-size: 21px;
+    color: #eee;
+    vertical-align: middle;
+}
+
+.footer hr {
+    border: none;
+    border-top: 1px solid gray;
+    margin: 0;
 }
 
 .footer .bottom {
-    line-height: 60px;
+    justify-content: space-between;
 }
 
-.footer select {
-    margin: 0 0 0 auto;
+.footer #link {
+    background: #111;
+    font-size: 17px;
+    text-transform: uppercase;
+    padding: 3px 15px;
+    color: #ddd;
+    outline: none;
+    font-family: 'Noto Sans KR', sans-serif;
 }

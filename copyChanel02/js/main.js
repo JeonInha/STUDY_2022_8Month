@@ -6,7 +6,7 @@ $(function () {
     })
 
     $('.main_slider').on('init reInit afterChange', function () {
-        console.log('변했네');
+        // console.log('변했네');
         let current = $('.slick-current');
         current.addClass('on').siblings().removeClass('on');
     })
@@ -32,13 +32,13 @@ $(function () {
 
 
     $('.m1').YTPlayer({
-        videoURL: 'https://youtu.be/eOOsAeOx5a0', 
+        videoURL: 'https://youtu.be/eOOsAeOx5a0',
         containment: '.bgmv',
         autoPlay: true,
         mute: true,
         startAt: 0.5,
         opacity: 1,
-        loop : true,
+        loop: true,
         showControls: false,
         playOnlyIfVisible: true
     });
@@ -57,6 +57,36 @@ $(function () {
     })
     /////////////////////////////////////////
 
+    $('.product_slider').slick({
+        slidesToShow: 5,
+        centerMode: true,
+        arrows: false,
+        dots: true,
+        autoplay: true,
+    });
 
+    $('.product_list i.s_left').on('click', function () {
+        $('.product_slider').slick('slickPrev')
+    })
+
+    $('.product_list i.s_right').on('click', function () {
+        $('.product_slider').slick('slickNext')
+    })
+
+    //////////////////////////////////////
+    $('.tab_link>li:nth-child(1)').addClass('on')
+    $('.tab_content>li:nth-child(1)').addClass('on')
+
+    $('.tab_link>li').on('click', function () {
+        // console.log($(this).index())
+        $(this).addClass('on').siblings().removeClass('on')
+        var idx = $(this).index();
+        $('.tab_content>li').eq(idx).addClass('on').siblings().removeClass('on');
+    })
+
+    $('.footer #link').on('change', function () {
+        var link = $(this).val();
+        if (link) window.open(link)
+    })
 
 })
