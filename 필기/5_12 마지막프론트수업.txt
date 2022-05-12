@@ -1,0 +1,35 @@
+https://sipossa.github.io/doc01/ 
+깃허브 기억해두고 공부하기
+----------------------
+
+css 속성*rem 기억하기. 글자크기를 쉽게 바꾸는 방법
+
+html {font-size: 10px;}
+body {font-size: 1.6rem}
+
+@media (max-width:768px) {
+html {font-size: 10px}
+body {font-size: 0.8rem}
+
+---------------------------
+
+CSS에서 변수 선언하기
+
+:root {
+--bw-w: #fff;
+}
+
+.bh-w {
+background: #fff;
+}
+
+h2 {
+background:var(--bg-w)}
+
+-----------------------------
+
+
+https://tailwindcss.com/
+기억해두기. 뭔지 검색.
+
+-----------------------------

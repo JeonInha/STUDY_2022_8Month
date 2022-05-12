@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/slick.css">
     <link rel="stylesheet" href="./css/jquery.mb.YTPlayer.min.css">
+    <link rel="stylesheet" href="./css/mbtn.css">
     <link rel="stylesheet" href="./css/main.css">
 </head>
 
@@ -107,7 +108,7 @@
                             <img src="./img/lesedilarona01.jpg">
                         </div>
                         <strong>스톤 그리고 색상들을 멋진 조합</strong>
-                        <a href="">구매하기 &#xF244;</a>
+                        <a href="">구매하기 <i class="bi bi-cart2"></i></a>
                     </figure>
                     <figure>
                         <div class="case"><img src="./img/lesedilarona02.jpg"></div>
@@ -120,11 +121,10 @@
                         <a href="">구매하기</a>
                     </figure>
                     <figure>
-                        <div class="case"><img src="./img/lesedilarona04.jpg"></div>
+                        <div class="case"><img src="./img/lesedilarona02.jpg"></div>
                         <strong>스톤 그리고 색상들을 멋진 조합</strong>
                         <a href="">구매하기</a>
                     </figure>
-
                 </div>
             </section>
 
@@ -141,7 +141,7 @@
             <section class="movie">
                 <div class="container">
                     <figure>
-                        <video src="img/movie.mp4" muted autoplay loop></video>
+                        <video src="img/movie.mp4" muted autoplay loop playsinline></video>
                         <!-- 모바일에서는 오토플레이하면 안됨 -->
                     </figure>
 
@@ -301,7 +301,8 @@
             <hr>
             <address class="bottom container">
                 <div class="left">
-                    <a href="tel:010-111112-1234">전화번호 : 010-1111-1234</a> <a href="mailto:wrefwq@fdsafd.com">email: wrefwq@gmail.com</a> Graff France Headquarters 237 rue Saint-Honore Paris
+                    <a href="tel:010-111112-1234">전화번호 : 010-1111-1234</a> <a href="mailto:wrefwq@fdsafd.com">email:
+                        wrefwq@gmail.com</a> Graff France Headquarters 237 rue Saint-Honore Paris
                     75001
                 </div>
                 <div class="right">
@@ -325,10 +326,11 @@
 
 
 
-
-
-
-
+    <button class="hamburger hamburger--collapse mbtn" type="button">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
 
     <script src="./js/jquery-1.12.4.min.js"></script>
     <script src="./js/slick.min.js"></script>

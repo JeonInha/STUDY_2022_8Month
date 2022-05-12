@@ -33,6 +33,6 @@ $(function () {
         var idx = $(this).index();
         $('.menu_content>li').eq(idx).addClass('on').siblings().removeClass('on');
     })
-        //////////////////////////////////////////////
+    //////////////////////////////////////////////
 
 })

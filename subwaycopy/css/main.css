@@ -150,6 +150,7 @@ nav:hover::before {
 .main_slider .itm03 {
     background: url(../img/mainslide/main_PC_1920x440_20220502101558818.jpg)no-repeat center center/cover;
     height: 440px;
+
 }
 
 
@@ -299,23 +300,64 @@ nav:hover::before {
 .menu_content {
     position: relative;
     height: 400px;
+    overflow: hidden;
+    width: 1200px;
+    margin: 0 auto;
 }
 
 .menu_content>li {
     position: absolute;
     top: 20px;
-    left: 0;
+    right: -100vw;
     width: 1200px;
     visibility: hidden;
+    transition: 0.3s;
+    margin: 0 auto;
+    opacity: 0;
+
 }
 
 .menu_content>li.on {
     visibility: visible;
+    right: 0;
+    opacity: 1;
+    transition: 0.5s 0.2s;
 }
 
 .menu_content figure {
+    position: relative;
     text-align: center;
+    justify-content: space-between;
     padding: 0 10px;
+}
+
+.menu_content figure:hover img {
+    transform: scale(1.2);
+}
+
+.menu_content figure:hover::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -0%);
+    display: block;
+    content: "\e97a";
+    background: #ffc300;
+    color: #fff;
+    font-size: 30px;
+    padding: 15px;
+    border-radius: 50%;
+    font-family: 'xeicon';
+
+}
+
+.menu_content figure:hover strong {
+    font-size: 30px;
+    transform: translateY(10px);
+}
+
+.menu_content figure:hover span {
+    display: none;
 }
 
 .menu_content img {
@@ -335,12 +377,16 @@ nav:hover::before {
 }
 
 .subway_menu i {
+    position: absolute;
     font-size: 25px;
     padding: 10px;
     background-color: transparent;
     color: gray;
     border-radius: 50%;
     vertical-align: middle center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .subway_menu i:hover {
@@ -349,17 +395,11 @@ nav:hover::before {
 }
 
 .subway_menu i.menu_left {
-    position: absolute;
-    top: 50%;
-    right: 50%;
-    transform: translateX(-650px);
+    margin: 0 0 0 -650px;
 }
 
 .subway_menu i.menu_right {
-    position: absolute;
-    top: 50%;
-    right: 50%;
-    transform: translateX(650px);
+    margin: 0 650px 0 650px;
 }
 
 
@@ -421,7 +461,7 @@ nav:hover::before {
     display: flex;
     flex: 2;
     background: #fff;
-    margin: 20px 0 0 55px;
+    margin: 20px 40px 0 55px;
     height: 300px;
     border-radius: 50px 0 50px 0;
     padding: 0px 30px;
@@ -480,7 +520,20 @@ nav:hover::before {
 }
 
 .sponcor {
+    position: relative;
     flex: 1;
+    background-color: #38af4c;
+    margin: 20px 55px 0 0;
+    border-radius: 50px 0 50px 0;
+}
+
+.sponcor h2 {
+    position: absolute;
+    top: 30%;
+    left: 15%;
+    color: white;
+    font-size: 32px;
+    font-weight: 700;
 }
 
 /* 99999999999999999999999999999999999999999999999999 */

@@ -63,6 +63,23 @@ $(function () {
         arrows: false,
         dots: true,
         autoplay: true,
+
+
+        responsive: [
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 1,
+                centerMode: false,
+                autoplay: false,
+              }
+            }
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+          ]
+
+
     });
 
     $('.product_list i.s_left').on('click', function () {
@@ -87,6 +104,11 @@ $(function () {
     $('.footer #link').on('change', function () {
         var link = $(this).val();
         if (link) window.open(link)
+    })
+
+    $('.mbtn').on('click', function () {
+        $('nav').toggleClass('on')
+        $(this).toggleClass('is-active')
     })
 
 })
