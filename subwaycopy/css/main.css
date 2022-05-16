@@ -9,6 +9,8 @@
     margin: 0 auto;
 }
 
+
+
 .top_banner {
     position: relative;
     border-top: #38af4c 5px solid;
@@ -27,7 +29,7 @@
 
 .top_banner .container {
     padding: 30px 0;
-    background: url(/subwaycopy/img/common/logo_w.png) no-repeat center center;
+    background: url(/img/common/logo_w.png) no-repeat center center;
 }
 
 .util_menu {
@@ -149,12 +151,12 @@ nav:hover::before {
 }
 
 .main_slider .itm02 {
-    background: url(../img/mainslide/main_PC_1920x440_20220502101537047.png)no-repeat center center/cover;
+    background: url(../img/mainslide/main_PC_1920x440_20220502101537047.png) no-repeat center center/cover;
     height: 440px;
 }
 
 .main_slider .itm03 {
-    background: url(../img/mainslide/main_PC_1920x440_20220502101558818.jpg)no-repeat center center/cover;
+    background: url(../img/mainslide/main_PC_1920x440_20220502101558818.jpg) no-repeat center center/cover;
     height: 440px;
 
 }
@@ -451,7 +453,7 @@ nav:hover::before {
 .middle_section .history {
     position: relative;
     flex: 2;
-    background: url(../img/main/img_subway_history.png)no-repeat center center/contain;
+    background: url(../img/main/img_subway_history.png) no-repeat center center/contain;
     height: 300px;
 }
 
@@ -665,4 +667,90 @@ footer .fbook {
 
 footer .fbook:hover {
     background: url(../img/common/icon_sns_facebook.png) no-repeat -50px 0;
+}
+
+
+
+.mopen {
+    display: none;
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    padding: 15px;
+    background-color: #ddd;
+    color: #333;
+    font-size: 25px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+/* ********************** */
+
+/*반응형 */
+
+/* ********************* */
+
+@media (max-width:768px) {
+
+    .mopen {
+        display: inline-block;
+    }
+
+    .container {
+        width: auto;
+        flex-direction: column;
+        padding: 0 15px;
+    }
+
+    .menu_wrap {
+        width: auto;
+        margin: 0 auto;
+    }
+
+    .util_menu {
+        display: none;
+    }
+
+    nav {
+        position: fixed;
+        left: -100;
+        top: 0;
+        width: calc(100vw - 150px);
+        height: 100vh;
+        flex-direction: column;
+        z-index: 999;
+    }
+
+    nav>ul {
+        flex-direction: column;
+        background-color: #ddd;
+    }
+
+    nav>ul>li {
+        text-align: left;
+        line-height: 40px;
+        border-bottom: #333 solid 1px;
+        padding: 0 15px;
+    }
+
+    nav:hover>ul>li ul {}
+
+    nav:hover::before {
+        height: 0px;
+    }
+
+
+    nav.on {
+        left: 0;
+    }
+
+
+
+
+
 }
