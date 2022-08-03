@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Title</title>
+
+
+  <style>
+
+  </style>
+</head>
+
+  <input>
+  <input type = "text"/>
+  <input type = "checkbox"/>
+  <input type = "password"/>
+  <input type = "number"/>
+  <input type = "email" />
+  <input type = "color"/>
+  <input type = "file"/>
+  <input type = "date"/>
+  <input type = "time"/>
+  <input type = "range"/>
+  <input type = "radio"/> 
+  <!-- 인풋 태그는 제출을 하기 위함 // 따라서 form,이라는 태그 안에 위치함. -->
+  <hr>
+
+  <form>
+    <label for = "searchLine">검색어
+    <!-- 해당 라벨이 어떤 태그를 설명하고 있는 건지 id로 확인 -->
+    <input id = "searchLine" type="text" name = "searchLine" placeholder="여기에 검색어를 입력하세요"/></label>
+    <label for = "searchLine2">검색어두번째 <input type="text" name = "searchLine2"/>
+      <input type = "checkbox" name ="lotto" value = "1st"/>
+      <input type = "checkbox" name ="lotto" value = "2nd"/>
+      <input type = "checkbox" name ="lotto" value = "3rd"/>
+
+      <input type = "radio" name = "prac" value = "1" checked/>
+      <!-- checked: 브라우저가 동작할때부터 체크되어있게 함 -->
+      <input type = "radio" name = "prac" value = "2"/>
+      <input type = "radio" name = "prac" value = "3"/>
+      <!-- name 같게 하면 묶을 수 있음 -->
+
+      <input type="hidden" name="darkTempler" value="zaratul"/>
+
+    <input type = "submit"/>
+  </form>
+  
+</body>
+</html>

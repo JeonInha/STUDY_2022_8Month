@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    
+    /* 헤더 안에 있는 모든 h1 */
+    header h1 {
+      background-color: black;
+      color: palevioletred;
+      padding: 20px;
+    }
+
+    /* 헤더 바로 아래에 있는 자식 h1 */
+    header > h1 {
+      border: 2px solid palevioletred;
+      text-align: center;
+    }
+    
+    p {
+      padding: 0;
+      margin: 0;
+    }
+
+    #blue {
+      background-color: lightblue;
+    }
+
+    .aaa {
+      background-color: lightblue;
+    }
+
+    ul {
+      width: auto;
+      display: flex;
+      justify-content: center;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin: 30px;
+    }
+
+    .container {
+      display: flex;
+    }
+
+    .container > div {
+      flex: 3;
+      background-color: beige;
+      padding: 50px;
+    }
+    .container > aside {
+      flex: 1;
+      background-color: brown;
+      padding: 50px;
+    }
+    /* id: 유일. 중복되지 않음. 무조건 하나만 선택됨. # 사용*/
+    /* class: 중복될 수 있음. . 사용 */
+ 
+  </style>
+</head>
+<body>
+
+  <header>
+   <!-- 검색페이지에서 여기를 찾음. header -->
+    <h1>헤더 영역</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="text.html">첫번째 페이지</a></li>
+      <li><a href="test2.html">두번째 페이지</li>
+      <li><a href="/inner/third.html">세번째 페이지</li>
+      <li><a href="inputText.html">입력 테스트</a></li>
+    </ul>
+  </nav>
+
+
+
+  <main>
+    <p class = "aaa">메인 영역</p>
+    <ul>
+      <li id = "blue">이런것도</li>
+      <li>있었던 것</li>
+      <li>같고</li>
+    </ul>
+    <ol>
+      <li>이런것도</li>
+      <li>있었던 것</li>
+      <li>같고</li>
+    </ol>
+  </main>
+  <div class = container>
+    <div>
+      <p>메인 영역</p>
+    </div>
+  <aside>
+    <article>
+      <h2>사이드 영역</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In esse quibusdam, dolor eveniet culpa debitis praesentium, totam, labore quo necessitatibus vel expedita molestiae temporibus magni architecto libero corporis natus eligendi!</p>
+    </article>
+  </aside>
+</div>
+  <footer>
+    <p>푸터 영역</p>
+  </footer>
+
+</body>
+</html>
