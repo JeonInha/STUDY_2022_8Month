@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prac_1</title>
+  <style>
+    .red {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="input">
+
+    <button id="nextBtn">네이버 가기</button>
+    <div id="mydiv"></div>
+    <button id="changeBtn">텍스트값 변경하기</button>
+    <button id="color">색변경하기</button>
+
+  </section>
+
+</body>
+<script>
+  document.getElementById("nextBtn").addEventListener("click", function (e) {
+    if (confirm("네이버로 이동할래요?")) {
+      window.location.href = "http://www.naver.com";
+    }
+  });
+
+  let mydiv = document.getElementById("mydiv");
+  let changebtn = document.getElementById("changeBtn");
+
+  changebtn.addEventListener("click", function (e) {
+    mydiv.innerText = "<strong>이야아아아아압 들어간다아아아아아</strong>";
+    // 일반글자 취급되어서 strong이 안먹음!
+    mydiv.innerHTML = "<strong>이야아아아아압 들어간다아아아아아</strong>";
+    // 이러면 HTML이 먹음!
+  })
+
+  color.addEventListener("click", function (e) {
+    //   mydiv.style.color = "red";
+    mydiv.classList.toggle("red");
+
+  })
+
+  setTimeout(function () {
+    console.log("1초 있다가 출력");
+  }, 1000)
+
+  var number = 0;
+  // setInterval(function () {
+  //   number++;
+  //   console.log(number);
+  // }, 1000)
+</script>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <p>방가방가</p>
+</body>
+
+<script>
+  function sum(a, b) {
+    return a + b;
+  }
+  let result = sum(10, 20);
+  console.log(result);
+  console.log(sum(11, 22));
+
+  function sumResult(a, b) {
+    if (a > b) {
+      return a + b;
+    } else {
+      return "b가 a보다 큼."
+    }
+  }
+  // 반환타입이 달라도 사용가능
+  // 그치만 하나의 기능은 하나의 함수로 만들자.
+
+
+  // 이게 뭐시다냐...............
+  // 이것도 함수표현이래 .........
+
+  let arrowFunc = (x) => {
+    console.log(x);
+  }
+  arrowFunc("test arrow");
+
+  /////////////////////////////
+
+  let sayYa = () => {
+    console.log("say");
+    return "반환값";
+  }
+
+
+  sayYa();
+  console.log(sayYa());
+
+  let multiply = (a, b) => a * b;
+  let m = multiply(10, 5);
+  console.log(m);
+
+  function eat(act) {
+    console.log("밥 먹구");
+    act();
+  }
+
+  let sleep = function () {
+    console.log("잠자기");
+  }
+
+  let study = function () {
+    alert("공부하기");
+  }
+
+  eat(sleep);
+  eat(study);
+</script>
+
+
+
+
+</html>

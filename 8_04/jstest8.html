@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button onclick="myListener()">누르세용</button>
+  <button id="mybtn">이것두눌러봐</button>
+  <input id="mytext" value="test 값" />
+</body>
+
+<script>
+  function myListener(e) {
+    alert("왜 누르니?");
+    console.log(e);
+  }
+
+  // 버튼과 소통할 수 있는 객체 만들어서 자바스크립트 사용
+  // DOM 모델(Document Object Model)
+
+  // mybtn.onclick = myListener;
+
+  // 해당 객체를 통해 원하는 것을 찾아낼 수 있음.
+  let elem = document.getElementById("mybtn");
+  // 해당 변수에 document로 요소를 찾아 반환 .(id로 탐색)
+  elem.addEventListener("click", myListener)
+
+  let inputText = document.getElementById("mytext");
+  console.log(inputText.value);
+</script>
+
+</html>

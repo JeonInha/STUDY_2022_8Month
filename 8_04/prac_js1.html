@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prac_1</title>
+</head>
+
+<body>
+  <section class="input">
+
+    <input type="number" id="int1" />
+    <input type="number" , id="int2" />
+    <button id="submit">제출</button>
+    <button id="nextBtn">다음으로</button>
+
+  </section>
+
+</body>
+<script>
+  // function sum(a, b) {
+  //   return a + b;
+  // }
+  let elem = document.getElementById("int1");
+  let inputText1 = elem.value;
+
+  function sum(a, b) {
+    return a + b;
+  }
+
+  function submit(e) {
+    let inputText1 = document.getElementById("int1").value;
+    let inputText2 = document.getElementById("int2").value;
+    console.log(sum(inputText1, inputText2));
+  }
+
+  let submitBtn = document.getElementById("submit");
+  submitBtn.addEventListener("click", submit);
+
+
+  document.getElementById("nextBtn").addEventListener("click", function (e) {
+    if (confirm("네이버로 이동할래요?")) {
+      window.location.href = "http://www.naver.com";
+    }
+  });
+</script>
+
+</html>

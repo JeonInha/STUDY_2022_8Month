@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="kor">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>stopWatch</title>
+</head>
+
+<body>
+  <div>
+    <p id="printBox">0초</p>
+    <button id="startAct">start</button>
+    <button id="resetAct">reset</button>
+    <button id="stopAct">정지</button>
+  </div>
+
+</body>
+<script>
+  var i = 0;
+
+
+  let vet = setInterval(function (e) {
+    i++;
+    printBox.innerHTML = i + "초";
+    console.log(i);
+  }, 1000)
+
+
+  startAct.addEventListener("click", function (e) {
+    vet;
+  })
+
+  function setreset() {
+    i = 0;
+  }
+
+  function stopstop() {
+    clearInterval(vet);
+  }
+
+  resetAct.addEventListener("click", setreset);
+  stopAct.addEventListener("click", stopstop);
+</script>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  var myInt = 10;
+  var myDouble = 33.44;
+  var zeroDiv = 0 / 0;
+
+  console.log(typeof myInt);
+  console.log(typeof myDouble);
+  // typeof 연산자를 통해 어떤 타입인지 알 수 있음.
+  // 정수 실수 구분 없이 둘다 number
+
+  console.log("0으로 나눈 값: " + zeroDiv);
+  // NaN = not a Number
+  console.log(typeof zeroDiv);
+  // 근데 타입은 숫자로 나옴 ... 이상한 애야 ...
+
+  // 각각의 타입:
+  var str = "hello?"; // string
+  var notDef; // undefined
+  var ref = null; // object
+
+  console.log(typeof str);
+  console.log(typeof notDef);
+  console.log(typeof ref);
+
+  // 관계연산 가능
+  console.log(1 > 2);
+  console.log(1 < 2);
+  console.log(10 == 10);
+
+  console.log(1 == "1");
+  // 타입을 가리지 않음. 문자열 숫자의 경우 숫자로 취급
+  console.log(1 == true); // true는 1
+  console.log(0 == false); // false는 0
+
+  console.log(1 === "1"); // 엄격한 비교 / equals와 비슷
+  // 유연한 비교는 ==, 엄격한 비교는 ===;
+
+  console.log(NaN == NaN); // Nan은 그 무엇과 비교해도 false
+  // NaN인지 아닌지 알려면::
+  console.log(isNaN(NaN)); // NaN인지아닌지
+  console.log(Object.is(NaN, NaN)); // 두 객체의 동등함 비교
+  // 이것도 엄격한 비교
+</script>
+
+</html>

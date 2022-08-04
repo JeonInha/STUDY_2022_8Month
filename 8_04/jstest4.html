@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  if ("123") {
+    // 관계연산자 말고 여러가지가 올 수 있음.
+    // 문자열: 값이 있으면 참, 값이 없으면 거짓.
+    // 숫자: 값이 있으면 참. 없거나 0이면 거짓.
+    // NaN, undefined, null 등 값이 없으면 거짓.
+    // Infinity (무한): 참
+
+  } else if ("234") {
+
+  } else {
+
+  }
+  var a = 0;
+  while (a < 10) {
+    // 반복문도 가능!
+    var a = a + 1;
+    console.log(a);
+
+  }
+
+  let i = 10;
+  while (i) {
+    console.log("반복");
+    i--;
+    // 이런것도 가능 .... 하여간 특이해
+  }
+
+  for (let j = 0; j < 10; j++) {
+    console.log("for 문");
+  }
+
+  // continue, break, switch, 전부 사용 가능!
+
+  // 삼항연산자 역시 다른 것 없음.
+  let result = true ? "왼" : "오";
+
+  let nullish = null ?? "hello";
+  // 왼쪽이 null이면 우측의 대체값으로 바꿔줌.
+
+
+  // 관계연산자는 비스무리
+  console.log(true && true);
+  console.log(false || true);
+
+  // 첫번째로 false로 판단될 수 있는 값을 찾아냄. 없으면 맨 뒤에거.;
+  console.log("hgfrwe" && "asdf");
+  console.log(0 && 500);
+
+  // 처음으로 true로 판단될 수 있는 값을 찾아냄. 없으면 맨 뒤에거.
+  console.log("dfad" || null);
+  console.log(0 || 500);
+  console.log(0 || null || NaN);
+
+  // not 연산자: 마찬가지로 역인데, string 이나 숫자 앞에도 올 수 있음.
+  console.log(!"FDSAF"); // 이런게 가능함... 독특
+</script>
+
+</html>
+
+<!-- 자바 스크립트의 한계:: 
+  브라우저의 환경을 벗어난 곳에서는 동작할 수 없음. -->
+<!-- 사용자 PC에 접근할 수 있기 때문에 권한이 매우 축소되어있음. -->
