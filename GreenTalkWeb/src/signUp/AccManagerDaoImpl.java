@@ -6,20 +6,19 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
 import de.Static;
-import ko.co.greenart.dbutil.DBUtil;
+import DB.DBUtil;
 
 public class AccManagerDaoImpl implements AccManagerDao {
-	
+
 	private String makeListToString(List<String> list) {
 		String a = list.get(0);
 		for (String ac : list) {
-			a = a.concat("/"+ac);
+			a = a.concat("/" + ac);
 		}
 		return a;
 	}
-	
+
 	private List<String> makefollowList(String st) {
 		String[] arr = st.split("/");
 		List<String> list = new ArrayList<>();
@@ -28,14 +27,14 @@ public class AccManagerDaoImpl implements AccManagerDao {
 		}
 		return list;
 	}
-	
+
 	private Account resultMaping(ResultSet rs) throws SQLException {
 		int num = rs.getInt("user_num");
 		String name = rs.getString("user_name");
 		String pw = rs.getString("user_pw");
 		String follower = rs.getString("user_followerList");
 		String folloing = rs.getString("user_followingList");
-		
+
 		Account ac = new Account(num, name, pw);
 		if (follower != null) {
 			List<String> followerList = makefollowList(follower);
@@ -47,16 +46,16 @@ public class AccManagerDaoImpl implements AccManagerDao {
 		}
 		return ac;
 	}
-	
+
 	// C
 	@Override
 	public int createNewAccount(Account user) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		String quary = "insert into user_account(user_name, user_pw) values(?, ?);";
-		
+
 		try {
-			conn=DBUtil.getConnection();
+			conn = DBUtil.getConnection();
 			pstmt = conn.prepareStatement(quary);
 			pstmt.setString(1, user.getUser_name());
 			pstmt.setString(2, user.getUser_pw());
@@ -79,18 +78,18 @@ public class AccManagerDaoImpl implements AccManagerDao {
 		ResultSet rs = null;
 		String quary = "select * from user_account where user_num = ?;";
 		Account ac = null;
-		
+
 		try {
 			conn = DBUtil.getConnection();
 			pstmt = conn.prepareStatement(quary);
 			pstmt.setInt(1, name);
-			
+
 			rs = pstmt.executeQuery();
-			
+
 			while (rs.next()) {
 				ac = resultMaping(rs);
 			}
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return null;
@@ -103,7 +102,7 @@ public class AccManagerDaoImpl implements AccManagerDao {
 		}
 		return ac;
 	}
-	
+
 	@Override
 	public Account readAccount(String name) {
 		Connection conn = null;
@@ -111,17 +110,17 @@ public class AccManagerDaoImpl implements AccManagerDao {
 		ResultSet rs = null;
 		String quary = "select * from user_account where user_name = ?;";
 		Account ac = null;
-		
+
 		try {
 			conn = DBUtil.getConnection();
 			pstmt = conn.prepareStatement(quary);
 			pstmt.setString(1, name);
 			rs = pstmt.executeQuery();
-			
+
 			while (rs.next()) {
 				ac = resultMaping(rs);
 			}
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return null;
@@ -142,9 +141,9 @@ public class AccManagerDaoImpl implements AccManagerDao {
 		ResultSet rs = null;
 		String quary = "select * from user_account;";
 		List<Account> arr = new ArrayList<>();
-		
+
 		try {
-			conn=DBUtil.getConnection();
+			conn = DBUtil.getConnection();
 			pstmt = conn.prepareStatement(quary);
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
@@ -161,7 +160,7 @@ public class AccManagerDaoImpl implements AccManagerDao {
 		}
 		return arr;
 	}
-	
+
 	public List<Account> getFollowingList(Account ac) {
 		List<String> following = ac.getUser_followingList();
 		List<Account> list = new ArrayList<>();
@@ -169,9 +168,9 @@ public class AccManagerDaoImpl implements AccManagerDao {
 			int num = Integer.valueOf(a);
 			list.add(readAccount(num));
 		}
-		return  list;
+		return list;
 	}
-	
+
 	public List<Account> getFollowerList(Account ac) {
 		List<String> follower = ac.getUser_followerList();
 		List<Account> list = new ArrayList<>();
@@ -179,9 +178,9 @@ public class AccManagerDaoImpl implements AccManagerDao {
 			int num = Integer.valueOf(a);
 			list.add(readAccount(num));
 		}
-		return  list;
+		return list;
 	}
-	
+
 	// U
 	@Override
 	public int updateFollowing(Account user) {
@@ -189,14 +188,14 @@ public class AccManagerDaoImpl implements AccManagerDao {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		String quary = "update user_account set user_followingList = ? where user_num = ?;";
-		
+
 		try {
 			conn = DBUtil.getConnection();
 			pstmt = conn.prepareStatement(quary);
 			pstmt.setString(1, st);
 			pstmt.setInt(2, user.getUser_num());
 			pstmt.executeUpdate();
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return Static.ERROR;
@@ -213,14 +212,14 @@ public class AccManagerDaoImpl implements AccManagerDao {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		String quary = "update user_account set user_followerList = ? where user_num = ?;";
-		
+
 		try {
 			conn = DBUtil.getConnection();
 			pstmt = conn.prepareStatement(quary);
 			pstmt.setString(1, st);
 			pstmt.setInt(2, user.getUser_num());
 			pstmt.executeUpdate();
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return Static.ERROR;
@@ -230,16 +229,16 @@ public class AccManagerDaoImpl implements AccManagerDao {
 		}
 		return Static.SUCESS;
 	}
-	
+
 	// D
 	@Override
 	public int deleteAccount(Account user) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		String quary = "delete from user_account where user_name = ?;";
-		
+
 		try {
-			conn=DBUtil.getConnection();
+			conn = DBUtil.getConnection();
 			pstmt = conn.prepareStatement(quary);
 			pstmt.setString(1, user.getUser_name());
 			pstmt.executeUpdate();
@@ -252,29 +251,38 @@ public class AccManagerDaoImpl implements AccManagerDao {
 		}
 		return Static.SUCESS;
 	}
-	
+
 	/////////////////////////////////////////////////////////////
-	
+
 	public boolean getIdCheck(String inputId) {
 		Account ac = readAccount(inputId);
-		if (ac ==null) {
+		if (ac == null) {
 			return false;
 		} else {
 			return true;
 		}
 	}
-	
+
 	public boolean getLogin(String inputId, String inputPw) {
 		Account ac = readAccount(inputId);
-		if (ac.getUser_pw().equals(inputPw)) {
-			return true;
+		if (ac != null) {
+			if (ac.getUser_pw().equals(inputPw)) {
+				return true;
+			} else {
+				return false;
+			}
 		} else {
 			return false;
 		}
 	}
-	
-	public Account makeNewUser(String inputId, String inputPw) {
+
+	public boolean makeNewUser(String inputId, String inputPw) {
 		Account ac = new Account(inputId, inputPw);
-		return ac;
+		int check = createNewAccount(ac);
+		if (check == de.Static.SUCESS) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 }

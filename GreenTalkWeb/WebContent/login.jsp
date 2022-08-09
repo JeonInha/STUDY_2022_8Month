@@ -1,3 +1,4 @@
+<%@page import="de.Static"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
@@ -11,12 +12,12 @@
 </head>
 
 <%
-	String prograss = request.getParameter("prograss");
+	Object prograss = request.getAttribute("progress");
 if (prograss != null) {
-	if (prograss.equals("none")) {
-		out.println("<script>window.alert(\"값을 입력하세요\")</script>");
-	} else if (prograss.equals("fail")) {
-		out.println("<script>window.alert(\"로그인 실패. 잘못된 정보 입력.\")</script>");
+	if (prograss.equals("None")) {
+		out.println("<script> alert('값을 입력하세요') </script>");
+	} else if (prograss.equals("Fail")) {
+		out.println("<script> alert('로그인 실패. 잘못된 정보 입력.') </script>");
 	}
 }
 %>
@@ -27,7 +28,7 @@ if (prograss != null) {
 			<a href="/"><img src="./img/logo1.png" alt="그린그린톡 메인로고"></a>
 		</header>
 		<main>
-			<form class="login_box" action="loginPrograss.jsp" method="post">
+			<form class="login_box" action="loginProgress.jsp" method="post">
 				<div class="input_box">
 					<i class="xi-profile-o"></i> <label for="id"> <input
 						type="text" name="input_id" placeholder="ID 입력" />

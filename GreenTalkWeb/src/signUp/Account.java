@@ -62,4 +62,10 @@ public class Account {
 		this.user_name = user_name;
 		this.user_pw = user_pw;
 	}
+	
+	@Override
+	public String toString() {
+		return "Account [user_num=" + user_num + ", user_name=" + user_name + ", user_pw=" + user_pw
+				+ ", user_followerList=" + user_followerList + ", user_followingList=" + user_followingList + "]";
+	}
 }

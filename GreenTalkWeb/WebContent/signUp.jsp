@@ -7,8 +7,8 @@
 <link rel="stylesheet" href="./css/reset.css">
 <link rel="stylesheet" href="./css/main.css">
 <title>그린그린톡.com</title>
-</head>
 
+</head>
 <body>
 	<div class=container>
 		<header>
@@ -32,7 +32,7 @@
 				<h4>• PW 확인</h4>
 				<div class="input_box">
 					<i class="xi-lock-o"></i> <label for="pw"> <input
-						type="password" name="input_pw" placeholder="패스워드 확인" />
+						type="password" name="check_pw" placeholder="패스워드 확인" />
 					</label>
 				</div>
 				<button>회원가입</button>
