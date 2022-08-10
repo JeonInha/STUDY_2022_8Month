@@ -8,6 +8,27 @@
 <link rel="stylesheet" href="./css/main.css">
 <title>그린그린톡.com</title>
 
+
+<%
+	Object prograss = request.getAttribute("progress");
+if (prograss != null) {
+	if (prograss.equals("NoneValue")) {
+		out.println("<script> alert('값을 입력하세요') </script>");
+		
+	} else if (prograss.equals("ID_exist")) {
+		out.println("<script> alert('이미 존재하는 ID입니다.') </script>");
+		
+	} else if (prograss.equals("checkPw_error")) {
+		out.println("<script> alert('pw와 pw확인 불일치.') </script>");
+		
+	} else if (prograss.equals("signUp_error")) {
+		out.println("<script> alert('이유를 알수없는 에러. 다시 시도 바랍니다.') </script>");
+	}
+}
+%>
+
+
+
 </head>
 <body>
 	<div class=container>
@@ -15,7 +36,7 @@
 			<a href="/"><img src="./img/logo1.png" alt="그린그린톡 메인로고"></a>
 		</header>
 		<main>
-			<form class="signUp_box" action="./signUpPrograss.jsp" method="post">
+			<form class="signUp_box" action="./login" method="post">
 					<h4>• ID 입력</h4><strong>• 4~12자, 영소문자와 숫자만 가능</strong>
 					<button type="button" class="dc">중복 확인</button>
 				<div class="input_box">

@@ -28,7 +28,7 @@ if (prograss != null) {
 			<a href="/"><img src="./img/logo1.png" alt="그린그린톡 메인로고"></a>
 		</header>
 		<main>
-			<form class="login_box" action="loginProgress.jsp" method="post">
+			<form class="login_box" action="./home" method="post">
 				<div class="input_box">
 					<i class="xi-profile-o"></i> <label for="id"> <input
 						type="text" name="input_id" placeholder="ID 입력" />
