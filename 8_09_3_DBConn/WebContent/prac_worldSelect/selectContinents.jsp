@@ -10,7 +10,7 @@
 </head>
 <body>
 	<p>대륙 선택하기</p>
-	<form action="viewWorldCon.jsp">
+	<form action="viewWorldCon_useEL.jsp">
 		<select name="cont" class="Continent">
 			<%
 			List<String> list= new WorldDaoImpl().getCont();
