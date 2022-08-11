@@ -30,12 +30,13 @@ public class AccManagerDaoImpl implements AccManagerDao {
 
 	private Account resultMaping(ResultSet rs) throws SQLException {
 		int num = rs.getInt("user_num");
+		String id = rs.getNString("user_id");
 		String name = rs.getString("user_name");
 		String pw = rs.getString("user_pw");
 		String follower = rs.getString("user_followerList");
 		String folloing = rs.getString("user_followingList");
 
-		Account ac = new Account(num, name, pw);
+		Account ac = new Account(num, id, name, pw);
 		if (follower != null) {
 			List<String> followerList = makefollowList(follower);
 			ac.setUser_followerList(followerList);
@@ -52,13 +53,14 @@ public class AccManagerDaoImpl implements AccManagerDao {
 	public int createNewAccount(Account user) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		String quary = "insert into user_account(user_name, user_pw) values(?, ?);";
+		String quary = "insert into user_account(user_id, user_name, user_pw) values(?, ?, ?);";
 
 		try {
 			conn = DBUtil.getConnection();
 			pstmt = conn.prepareStatement(quary);
-			pstmt.setString(1, user.getUser_name());
-			pstmt.setString(2, user.getUser_pw());
+			pstmt.setString(1, user.getUser_id());
+			pstmt.setString(2, user.getUser_name());
+			pstmt.setString(3, user.getUser_pw());
 			pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -72,7 +74,7 @@ public class AccManagerDaoImpl implements AccManagerDao {
 
 	// R
 	@Override
-	public Account readAccount(int name) {
+	public Account readAccountByCode(int name) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -104,7 +106,7 @@ public class AccManagerDaoImpl implements AccManagerDao {
 	}
 
 	@Override
-	public Account readAccount(String name) {
+	public Account readAccountByNickname(String name) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -115,6 +117,37 @@ public class AccManagerDaoImpl implements AccManagerDao {
 			conn = DBUtil.getConnection();
 			pstmt = conn.prepareStatement(quary);
 			pstmt.setString(1, name);
+			rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+				ac = resultMaping(rs);
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		} finally {
+			if (conn != null) {
+				DBUtil.closeRs(rs);
+				DBUtil.closeStmt(pstmt);
+				DBUtil.closeConn(conn);
+			}
+		}
+		return ac;
+	}
+	
+	@Override
+	public Account readAccountById(String id) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String quary = "select * from user_account where user_id = ?;";
+		Account ac = null;
+
+		try {
+			conn = DBUtil.getConnection();
+			pstmt = conn.prepareStatement(quary);
+			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
 
 			while (rs.next()) {
@@ -166,7 +199,7 @@ public class AccManagerDaoImpl implements AccManagerDao {
 		List<Account> list = new ArrayList<>();
 		for (String a : following) {
 			int num = Integer.valueOf(a);
-			list.add(readAccount(num));
+			list.add(readAccountByCode(num));
 		}
 		return list;
 	}
@@ -176,7 +209,7 @@ public class AccManagerDaoImpl implements AccManagerDao {
 		List<Account> list = new ArrayList<>();
 		for (String a : follower) {
 			int num = Integer.valueOf(a);
-			list.add(readAccount(num));
+			list.add(readAccountByCode(num));
 		}
 		return list;
 	}
@@ -229,6 +262,29 @@ public class AccManagerDaoImpl implements AccManagerDao {
 		}
 		return Static.SUCESS;
 	}
+	
+	@Override
+	public int changeNickName(Account user) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String quary = "update user_account set user_id = ? where user_num = ?;";
+
+		try {
+			conn = DBUtil.getConnection();
+			pstmt = conn.prepareStatement(quary);
+			pstmt.setString(1, user.getUser_id());
+			pstmt.setInt(2, user.getUser_num());
+			pstmt.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return Static.ERROR;
+		} finally {
+			DBUtil.closeStmt(pstmt);
+			DBUtil.closeConn(conn);
+		}
+		return Static.SUCESS;
+	}
 
 	// D
 	@Override
@@ -254,8 +310,9 @@ public class AccManagerDaoImpl implements AccManagerDao {
 
 	/////////////////////////////////////////////////////////////
 
+	// 아이디가 DB에 존재하는지 아닌지 체크하여 Boolean으로 반환하는 메소드
 	public boolean getIdCheck(String inputId) {
-		Account ac = readAccount(inputId);
+		Account ac = readAccountById(inputId);
 		if (ac == null) {
 			return false;
 		} else {
@@ -263,8 +320,9 @@ public class AccManagerDaoImpl implements AccManagerDao {
 		}
 	}
 
+	// id가 DB에 있고 비밀번호가 일치할 때 true 반환하는 메소드
 	public boolean getLogin(String inputId, String inputPw) {
-		Account ac = readAccount(inputId);
+		Account ac = readAccountById(inputId);
 		if (ac != null) {
 			if (ac.getUser_pw().equals(inputPw)) {
 				return true;
@@ -276,10 +334,11 @@ public class AccManagerDaoImpl implements AccManagerDao {
 		}
 	}
 
-	public boolean makeNewUser(String inputId, String inputPw) {
-		Account ac = new Account(inputId, inputPw);
+	// id, 닉네임, 비밀번호 넣어서 계정을 생성해 DB에 넣고, 그 과정이 성공하면 true, 실패하면 false 반환하는 메소드.
+	public boolean makeNewUser(String inputId, String inputName, String inputPw) {
+		Account ac = new Account(inputId, inputName, inputPw);
 		int check = createNewAccount(ac);
-		if (check == de.Static.SUCESS) {
+		if (check == Static.SUCESS) {
 			return true;
 		} else {
 			return false;

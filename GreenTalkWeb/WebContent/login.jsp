@@ -31,12 +31,12 @@ if (prograss != null) {
 			<form class="login_box" action="./home" method="post">
 				<div class="input_box">
 					<i class="xi-profile-o"></i> <label for="id"> <input
-						type="text" name="input_id" placeholder="ID 입력" />
+						type="text" name="input_id" placeholder="ID 입력" required/>
 					</label>
 				</div>
 				<div class="input_box">
 					<i class="xi-lock-o"></i> <label for="pw"> <input
-						type="password" name="input_pw" placeholder="패스워드 입력" />
+						type="password" name="input_pw" placeholder="패스워드 입력" required />
 					</label>
 				</div>
 				<button>LOGIN</button>

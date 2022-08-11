@@ -18,11 +18,11 @@
 		</header>
 		<nav>
 			<ul>
-				<li>타임라인</li>
-				<li>탐색하기</li>
-				<li>검색하기</li>
-				<li>알림창(미구현)</li>
-				<li>마이페이지(미구현)</li>
+				<li><a href="#!">타임라인</a></li>
+				<li><a href="#!">탐색하기</a></li>
+				<li><a href="#!">검색하기</a></li>
+				<li><a href="#!">알림창</a></li>
+				<li><a href="#!">마이페이지</a></li>
 			</ul>
 		</nav>
 		<main>
