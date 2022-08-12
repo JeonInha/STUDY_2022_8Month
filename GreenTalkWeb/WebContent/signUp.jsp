@@ -10,21 +10,19 @@
 <title>그린그린톡.com</title>
 
 <%
+// TODO 이거 동작안함 이유 몰겠ㅆ음..
 	Object error = request.getAttribute("error");
 if (error != null) {
-	Map<String, String> error = (HashMap) error;
-	if (prograss.equals("NoneValue")) {
-		out.println("<script> alert('값을 입력하세요') </script>");
-
-	} else if (prograss.equals("ID_exist")) {
-		out.println("<script> alert('이미 존재하는 ID입니다.') </script>");
-
-	} else if (prograss.equals("checkPw_error")) {
-		out.println("<script> alert('pw와 pw확인 불일치.') </script>");
-
-	} else if (prograss.equals("signUp_error")) {
-		out.println("<script> alert('이유를 알수없는 에러. 다시 시도 바랍니다.') </script>");
+	Map<String, String> errorMap = (HashMap) error;
+	
+	String st = "";
+	
+	for (String key : errorMap.keySet()) {
+		st = st.concat(errorMap.get(key));
+		st = st.concat("<br/>");
 	}
+	
+	out.println("<script> alert("+st+") </script>");
 }
 %>
 
