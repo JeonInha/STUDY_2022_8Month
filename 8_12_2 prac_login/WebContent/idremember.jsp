@@ -6,18 +6,20 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+</head>
 <body>
-<%
-	Cookie[] c = request.getCookies();
-	for (Cookie ck : c) {
-		
-		if (ck.getName().equals("rememberme")) {
-			request.setAttribute("idvalue", URLDecoder.decode(ck.getValue(), "utf-8"));
+	<%
+		Cookie[] cookies = request.getCookies();
+		if (cookies != null) {
+			for (Cookie c : cookies) {
+				if (c.getName().equals("rememberme")) {
+					request.setAttribute("idvalue", URLDecoder.decode(c.getValue(), "utf-8"));
+				}
+			}
 		}
-	}
-%>
-	<form action="./login" method = "post">
-		<input type="text" name="id" value = ${ idvalue } />
+	%>
+	<form action="./login" method="post">
+		<input type="text" name="id" value="${ idvalue }"/>
 		<input type="password" name="password"/>
 		<input type="checkbox" name="rememberme"/>
 		<input type="submit"/>

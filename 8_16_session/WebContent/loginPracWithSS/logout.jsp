@@ -4,9 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>로그인 성공</title>
+<title>로그아웃</title>
 </head>
 <body>
-	<p>환영합니다.</p>
+	<% session.invalidate(); %>
+	<p>로그아웃 되었습니다.</p>
+	<a href="./index.jsp">메인페이지로</a>
 </body>
 </html>

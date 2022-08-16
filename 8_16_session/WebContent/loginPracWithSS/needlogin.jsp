@@ -4,9 +4,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>로그인 성공</title>
+<title>로그인해주세용</title>
 </head>
 <body>
-	<p>환영합니다.</p>
+	<h2>로그인해야 볼수있어용</h2>
+	<a href="../loginPracWithSS/loginform.jsp">로그인하러 가기</a>
 </body>
 </html>

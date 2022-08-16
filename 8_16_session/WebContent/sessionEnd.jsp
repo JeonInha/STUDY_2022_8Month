@@ -4,9 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>로그인 성공</title>
+<title>Insert title here</title>
 </head>
 <body>
-	<p>환영합니다.</p>
+	<%
+		session.invalidate();
+	// 세션 종료 메소드
+	%>
+	<p>세션이 만료되었습니다.</p>
 </body>
 </html>
