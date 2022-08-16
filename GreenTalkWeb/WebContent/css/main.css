@@ -1,0 +1,133 @@
+/* .container {
+    width: 1200px;
+    margin: 0 auto;
+    flex-direction: column;
+} */
+
+header {
+    width: 100vw;
+    padding: 50px 0 50px 0;
+    text-align: center;
+    background-color: #D0DFDA;
+}
+
+main {
+	margin-top: 30px;
+    width: 100vw;
+}
+
+nav {
+    background-color: #7DAD3F;
+    padding: 20px 0px 20px 0px;
+    margin: 0 auto;
+    border-top: #236476 1px solid;
+    border-bottom: #236476 1px solid;
+}
+
+
+nav ul {
+    width: 1200px;
+    display: flex;
+    flex-direction: row;
+}
+
+
+nav li {
+	flex: 1;
+	text-align: center;
+    font-size: 20px;
+    font-weight: 800;
+    color: white;
+}
+
+
+.login_box {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+}
+
+.input_box {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    text-align: center;
+    vertical-align: center;
+    width: 300px;
+    height: 50px;
+    border: 1px #236476 solid;
+    border-radius: 5px;
+    margin: 0 auto;
+    margin-bottom: 5px;
+}
+
+.input_box i {
+    width: 50px;
+    height: inherit;
+    vertical-align: middle;
+    font-size: 30px;
+    border-radius: 5px 0 0 5px;
+    background-color: #236476;
+    color: white;
+
+}
+
+.input_box input {
+    width: 200px;
+    height: 30px;
+    padding-left: 30px;
+    align-items: end;
+    border: none;
+    color: #236476;
+    font-size: 24px;
+}
+
+.login_box button {
+    width: 300px;
+    height: 50px;
+    font-size: 24px;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    background-color: #236476;
+    color: white;
+    margin: 0 auto;
+}
+
+.signUp_box {
+    text-align: center;
+}
+
+.signUp_box p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: gray;
+}
+
+.signUp_box p a {
+    padding-left: 15px;
+    color: #236476;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.signUp_box button {
+    width: 300px;
+    height: 50px;
+    font-size: 24px;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    background-color: #236476;
+    color: white;
+    margin: 0 auto;
+}
+
+.dc {
+	width: 50px;
+	height: 20px;
+	font-size: 14px;
+}
+
+
