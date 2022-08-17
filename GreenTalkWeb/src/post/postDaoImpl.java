@@ -195,7 +195,7 @@ public class postDaoImpl implements PostDao{
 		Connection conn = null;
 		Statement stmt = null;
 		ResultSet rs = null;
-		String sql = "select * from FROM green_talk.post where post_user_id in (";
+		String sql = "select * FROM green_talk.post where post_user_id in (";
 		List<Post> post = new ArrayList<>();
 		
 		try {
@@ -207,7 +207,9 @@ public class postDaoImpl implements PostDao{
 				sql = sql.concat(a+", ");
 			}
 			
-			sql = sql.concat("0 );");
+			sql = sql.concat("0);");
+			System.out.println(sql);
+			
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
 			
