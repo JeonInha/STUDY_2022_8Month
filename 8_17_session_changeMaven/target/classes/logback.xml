@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+
+<!-- appender: 어디에 어떻게 기록을 남길건지 설정. -->
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+         <!-- encoder: 어떤 모양으로 기록을 남길지 설정. 패턴은 공홈 참고해서 설정하장 
+         공홈 : https://logback.qos.ch/manual/layouts.html-->
+    <encoder>
+      <pattern>%date {HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+    </encoder>
+  </appender>
+  
+  
+  <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+    <file>d:/logs/testFile.log</file>
+    <append>true</append>
+    <!-- set immediateFlush to false for much higher logging throughput -->
+    <immediateFlush>true</immediateFlush>
+    <!-- encoders are assigned the type
+         ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+    <encoder>
+      <pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>
+    </encoder>
+  </appender>
+  
+  
+<!--root: 로깅 레벨 설정. 지금은 모든메시지를 다 출력하게 설정되어있음. -->
+  <root level="debug">
+    <appender-ref ref="STDOUT" />
+        <appender-ref ref="FILE" />
+  </root>
+</configuration>
