@@ -38,7 +38,7 @@ public class JoinRequest {
 	}
 	
 	
-	public void vaildate(Map<String, Boolean> errors) {
+	public void validate(Map<String, Boolean> errors) {
 		checkEmpty(errors, id, "id");
 		checkEmpty(errors, name, "name");
 		checkEmpty(errors, password, "password");

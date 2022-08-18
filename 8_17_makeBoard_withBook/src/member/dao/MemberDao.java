@@ -24,7 +24,7 @@ public class MemberDao {
 	////////////////////////////////////////////////////
 
 	public Member selectById(Connection conn, String id) throws SQLException {
-		String sql = "select * from member where memberid = ?";
+		String sql = "select * from board.member where memberid = ?";
 		Member member = null;
 		ResultSet rs = null;
 		try (PreparedStatement pstmt = conn.prepareStatement(sql);) {
@@ -39,15 +39,26 @@ public class MemberDao {
 		}
 		return member;
 	}
-
+	
 	public void insert(Connection conn, Member mem) throws SQLException {
-		try (PreparedStatement pstmt = conn.prepareStatement("insert into member values(?, ?, ?, ?)")) {
-
+		try (PreparedStatement pstmt = 
+				conn.prepareStatement("insert into board.member(memberid, name, password, regdate) values( ?, ?, ?, ? )")) {
 			pstmt.setString(1, mem.getId());
 			pstmt.setString(2, mem.getName());
 			pstmt.setString(3, mem.getPassword());
 			pstmt.setTimestamp(4, new Timestamp(mem.getRegDate().getTime()));
+			pstmt.executeUpdate();
+		}
+	}
+	
+	public void update(Connection conn, Member member) throws SQLException {
+		String sql = "update board.member set name = ?, password = ? where memberid = ?";
 		
+		try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+			pstmt.setNString(1, member.getName());
+			pstmt.setNString(2, member.getPassword());
+			pstmt.setNString(3, member.getId());
+			
 			pstmt.executeUpdate();
 		}
 	}

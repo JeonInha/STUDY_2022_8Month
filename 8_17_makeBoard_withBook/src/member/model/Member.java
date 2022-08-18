@@ -5,16 +5,17 @@ public class Member {
 	
 	private String id;
 	private String name;
-	private String passsword;
+	private String password;
 	private Date regDate;
 
 	public Member(String id, String name, String passsword, Date date) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.passsword = passsword;
+		this.password = passsword;
 		this.regDate = date;
 	}
+	
 	public String getId() {
 		return id;
 	}
@@ -28,10 +29,10 @@ public class Member {
 		this.name = name;
 	}
 	public String getPassword() {
-		return passsword;
+		return password;
 	}
 	public void setPassword(String possword) {
-		this.passsword = possword;
+		this.password = possword;
 	}
 	public Date getRegDate() {
 		return regDate;
@@ -41,7 +42,11 @@ public class Member {
 	}
 	
 	public boolean matchPassword(String pwd) {
-		return passsword.equals(pwd);
+		return password.equals(pwd);
+	}
+	
+	public void changePassword(String newPwd) {
+		this.password = newPwd;
 	}
 	
 	

@@ -30,6 +30,8 @@ public class JoinService {
 			
 		} catch (SQLException e) {
 			JdbcUtil.rollback(conn);
+			System.out.println("스택트레이스 출력하세요");
+			e.printStackTrace();
 			throw new RuntimeException();
 		} finally {
 			JdbcUtil.closeConn(conn);
