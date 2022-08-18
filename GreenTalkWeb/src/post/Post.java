@@ -68,6 +68,11 @@ public class Post {
 	public void setPost_Comment_userid(int post_Comment_userid) {
 		this.post_Comment_userid = post_Comment_userid;
 	}
-	
+	public LocalDateTime getPost_dateTime() {
+		return post_dateTime;
+	}
+	public void setPost_dateTime(LocalDateTime post_dateTime) {
+		this.post_dateTime = post_dateTime;
+	}
 	
 }

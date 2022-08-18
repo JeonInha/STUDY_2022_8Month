@@ -33,12 +33,16 @@ public class postDaoImpl implements PostDao{
 	}
 	
 	public LocalDateTime StringtoLDT(String dateTime) {
-		
+		System.out.println(dateTime);
 		dateTime= dateTime.replace("-", ":");
 		dateTime= dateTime.replace(" ", ":");
 		String[] dateString = dateTime.split(":");
 		int[] date = new int[6];
-		
+		for (int i=0; i<date.length; i++) {
+			date[i] = Integer.valueOf(dateString[i]);
+			System.out.println(date[i]);
+		}
+			
 		LocalDateTime ldt = LocalDateTime.of(LocalDate.of(date[0], date[1], date[2]), LocalTime.of(date[3], date[4], date[5]));
 		return ldt;
 	}
@@ -195,7 +199,7 @@ public class postDaoImpl implements PostDao{
 		Connection conn = null;
 		Statement stmt = null;
 		ResultSet rs = null;
-		String sql = "select * from FROM green_talk.post where post_user_id in (";
+		String sql = "select * FROM green_talk.post where post_user_id in (";
 		List<Post> post = new ArrayList<>();
 		
 		try {
@@ -207,12 +211,15 @@ public class postDaoImpl implements PostDao{
 				sql = sql.concat(a+", ");
 			}
 			
-			sql = sql.concat("0 );");
+			sql = sql.concat("0);");
+			System.out.println(sql);
+			
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
 			
 			while (rs.next()) {
 				post.add(resultMap(rs));
+				System.out.println(resultMap(rs).getPost_content());
 			}
 			
 		} catch (SQLException e) {

@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,7 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import post.Post;
+import post.postDaoImpl;
 import signUp.AccManagerDaoImpl;
+import signUp.Account;
 
 @WebServlet("/letslogin")
 public class login extends HttpServlet {
@@ -39,6 +43,14 @@ public class login extends HttpServlet {
 			} else {
 				HttpSession session = request.getSession();
 				session.setAttribute("loginid", inputId);
+				
+				AccManagerDaoImpl adi = new AccManagerDaoImpl();
+				postDaoImpl pd = new postDaoImpl();
+				String userID = (String) session.getAttribute("loginid");
+				Account user = adi.readAccountById(userID);
+				List<Post> timeLine = pd.readPostbyFollower(user);
+				
+				request.setAttribute("timeline", timeLine);
 				request.getRequestDispatcher("/WEB-INF/home.jsp").forward(request, response);
 			}
 	}
