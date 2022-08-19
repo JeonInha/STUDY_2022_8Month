@@ -130,4 +130,9 @@ nav li {
 	font-size: 14px;
 }
 
+.flexBox {
+	display:flex;
+	flex-direction: row;
+}
+
 

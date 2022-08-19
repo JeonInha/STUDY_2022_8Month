@@ -31,6 +31,13 @@ public class Post {
 		this.post_id = post_id;
 		this.post_dateTime = post_dateTime;
 	}
+	
+	public Post(int post_user_id, String post_content, boolean post_isComment) {
+		super();
+		this.post_user_id = post_user_id;
+		this.post_content = post_content;
+		this.post_isComment = post_isComment;
+	}
 
 	public int getPost_id() {
 		return post_id;

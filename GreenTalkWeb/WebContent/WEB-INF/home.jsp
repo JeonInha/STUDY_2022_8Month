@@ -17,20 +17,21 @@
 <title>그린그린톡.com</title>
 </head>
 <%
+	AccManagerDaoImpl adi = new AccManagerDaoImpl();
 %>
 
 <body>
 	<div class="container">
 		<header>
-			<a href="/"><img src="./img/logo1.png" alt="그린그린톡 메인로고"></a>
+			<a href="./letslogin"><img src="./img/logo1.png" alt="그린그린톡 메인로고"></a>
 		</header>
 		<nav>
 			<ul>
-				<li><a href="./">톡톡하기</a></li>
+				<li><a href="./letslogin">톡톡하기</a></li>
 				<li><a href="#!">탐색하기</a></li>
 				<li><a href="#!">검색하기</a></li>
 				<li><a href="#!">알림창</a></li>
-				<li><a href="./mypage">마이페이지</a></li>
+				<li><a href="./gomypage">마이페이지</a></li>
 			</ul>
 		</nav>
 		<main>
@@ -44,18 +45,23 @@
 							<div class="talktalk">
 								<div class="talk_header">
 									<div class="talk_id">
-										<h2>닉네임닉네임</h2>
-										<strong>@idid</strong>
+										<%
+											int postUser_num = ((Post) pageContext.getAttribute("post")).getPost_user_id();
+											Account postUser = adi.readAccountByCode(postUser_num);
+											pageContext.setAttribute("postUser", postUser);
+										%>
+
+										<h2>${ postUser.user_name }</h2>
+										<strong> ${ postUser.user_id } </strong>
 									</div>
-									<h3>${post.post_dateTime }</h3>
+									<h3>${ post.post_dateTime }</h3>
 								</div>
 								<div class="talk_liner">
 									<i class="xi-user-o">누구에게 보내는지</i> <a href=""><i
 										class="xi-comment-o">원톡보기</i></a> <i class="xi-speech-o">댓톡하기</i>
 								</div>
 								<p class="talk_post">
-									${post.post_content } <a href="http://www.naver.com">이건
-										주소주소</a>
+									${ post.post_content }
 								</p>
 							</div>
 						</c:forEach>

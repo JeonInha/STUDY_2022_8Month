@@ -112,7 +112,7 @@ public class postDaoImpl implements PostDao{
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select * from FROM green_talk.post where post_user_id = ?";
+		String sql = "select * FROM green_talk.post where post_user_id = ?";
 		List<Post> post = new ArrayList<>();
 		
 		try {
@@ -141,7 +141,7 @@ public class postDaoImpl implements PostDao{
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select * from FROM green_talk.post where post_id = ?";
+		String sql = "select * FROM green_talk.post where post_id = ?";
 		Post post = null;
 		
 		try {
@@ -170,7 +170,7 @@ public class postDaoImpl implements PostDao{
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select * from FROM green_talk.post where post_content Like ?";
+		String sql = "select * FROM green_talk.post where post_content Like ?";
 		List<Post> post = new ArrayList<>();
 		
 		try {
