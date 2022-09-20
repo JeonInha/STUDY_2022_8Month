@@ -8,5 +8,6 @@
 </head>
 <body>
 	<%= request.getRequestURI() %>
-</body>
+	<%= 여기서 출력할  %>
+</바디>
 </html>
